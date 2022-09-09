@@ -20,12 +20,12 @@ class API extends BaseController
     }
 
     use ResponseTrait;
-    public function getAllReporting()
+    public function getAllSaisie()
     {
         $retour = '';
-        $data = json_decode(file_get_contents('php://input'), true);
+        $data = getallheaders()['Authorization'];
         
-        if(trim($data['token']) == '43908e4829b22dd58c9bca6f02a6782a'){
+        if(trim($data) == '43908e4829b22dd58c9bca6f02a6782a'){
             if($_SERVER['REQUEST_METHOD'] === 'GET'){
                 $data_saisie = $this->saisie->getAllDataSaisie();
                 
@@ -55,9 +55,9 @@ class API extends BaseController
     public function getAllParametrage()
     {
         $retour = '';
-        $data = json_decode(file_get_contents('php://input'), true);
+        $data = getallheaders()['Authorization'];
 
-        if (trim($data['token']) == '43908e4829b22dd58c9bca6f02a6782a') {
+        if (trim($data) == '43908e4829b22dd58c9bca6f02a6782a') {
             if ($_SERVER['REQUEST_METHOD'] === 'GET') {
                 $data_parametrage = $this->parametrage->getAllParametrageForApi();
                 

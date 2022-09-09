@@ -54,7 +54,7 @@ $routes->post('/interf/ShowSaisie', 'Saisie::showSaisie', ['as' => 'show_saisie'
 $routes->post('/saisie/visu', 'Saisie::getAllSaisie', ['as' => 'visu_saisie']);
 $routes->post('/saisie/updateJPlus', 'Saisie::UpdateDataJplus1', ['as' => 'udpate_plus']);
 
-$routes->get('/saisie', 'API::getAllReporting', ['as' => 'api_ressource']);
+$routes->get('/saisie', 'API::getAllSaisie', ['as' => 'api_ressource']);
 $routes->get('/parametrage', 'API::getAllParametrage', ['as' => 'api_parametrage_ressource']);
 
 /*
