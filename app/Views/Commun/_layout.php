@@ -17,21 +17,21 @@
         <link href="https://cdn.datatables.net/1.11.4/css/dataTables.bootstrap5.min.css" rel="stylesheet" crossorigin="anonymous" />
 
 
-		<!-- Load JS -->
+		<!-- Load js -->
         <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
 
 		<!--<script type="text/javascript" src="<?= base_url()?>/assets/js/jquery.min.js"></script>-->
         <script src="https://cdn.datatables.net/1.11.4/js/jquery.dataTables.min.js" crossorigin="anonymous"></script>
         <script src="https://cdn.datatables.net/1.11.4/js/dataTables.bootstrap5.min.js" crossorigin="anonymous"></script>
-		<script type="text/javascript" src="<?= base_url()?>/assets/JS/bootstrap/bootstrap.js"/></script>
-		<script type="text/javascript" src="<?= base_url()?>/assets/JS/Bootbox/bootbox.all.js"/></script>
-		<script type="text/javascript" src="<?= base_url()?>/assets/JS/Bootbox/bootbox.locales.js"/></script>
-		<script type="text/javascript" src="<?= base_url()?>/assets/JS/Bootbox/bootbox.min.js"/></script>
-        <script type="text/javascript" src="<?= base_url()?>/assets/JS/fontawesome/fontawesome.js"></script>
-        <script type="text/javascript" src="<?= base_url()?>/assets/JS/fontawesome-6/js/all.js"></script>
-        <script type="text/javascript" src="<?= base_url()?>/assets/JS/fontawesome/solid.js"></script>
-        <script type="text/javascript" src="<?= base_url()?>/assets/JS/commun.js"></script>
-        <script type="text/javascript" src="<?= base_url()?>/assets/JS/SweetAlert/SweetAlert_unpkg.js"></script>
+		<script type="text/javascript" src="<?= base_url()?>/assets/js/bootstrap/bootstrap.js"/></script>
+		<script type="text/javascript" src="<?= base_url()?>/assets/js/Bootbox/bootbox.all.js"/></script>
+		<script type="text/javascript" src="<?= base_url()?>/assets/js/Bootbox/bootbox.locales.js"/></script>
+		<script type="text/javascript" src="<?= base_url()?>/assets/js/Bootbox/bootbox.min.js"/></script>
+        <script type="text/javascript" src="<?= base_url()?>/assets/js/fontawesome/fontawesome.js"></script>
+        <script type="text/javascript" src="<?= base_url()?>/assets/js/fontawesome-6/js/all.js"></script>
+        <script type="text/javascript" src="<?= base_url()?>/assets/js/fontawesome/solid.js"></script>
+        <script type="text/javascript" src="<?= base_url()?>/assets/js/commun.js"></script>
+        <script type="text/javascript" src="<?= base_url()?>/assets/js/SweetAlert/SweetAlert_unpkg.js"></script>
 
 
         <!-- Isolated Version of Bootstrap, not needed if your site already uses Bootstrap -->
@@ -108,7 +108,7 @@
 		<!-- Javascript -->
 		<?php if(isset($require_js)) { ?>
 			<?php foreach($require_js as $js) { ?>
-				<script type="text/javascript" src="<?= base_url("/assets/JS/reporting/". $js )?>"></script>
+				<script type="text/javascript" src="<?= base_url("/assets/js/reporting/". $js )?>"></script>
 			<?php } ?>
 		<?php } ?>
 
