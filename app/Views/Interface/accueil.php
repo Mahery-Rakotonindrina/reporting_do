@@ -9,7 +9,7 @@
               <div class="col-sm-3"></div>
               <button class="btn btn-primary col-sm-2" id="visu_saisie" title="visualiser saisie" data-toggle="modal" data-target="#modal_visu_saisie">Visu Saisie</button>
               <div class="col-sm-1"></div>
-              <button id="btn-visu_param" class="btn btn-primary col-sm-2" title="visualiser paramétrages" data-toggle="modal" data-target="#modal_visu_param">Visu Parametrage</button> 
+              <button id="btn-visu_param" class="btn btn-primary col-sm-2" title="visualiser paramétrages" data-toggle="modal" data-target="#modal_visu_param">Visu Paramétrage</button> 
               <div class="col-sm-1"></div>
               <button type="button" id="btn-new_param" class="btn btn-primary" title="ajouter nouveaux parametrage" data-toggle="modal" data-target="#modal_param">
                 <span class="fa fa-plus"></span>

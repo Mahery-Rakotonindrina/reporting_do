@@ -25,7 +25,7 @@ Class Parametrage extends BaseController
     {
         $clients = $this->reporting->getClientReporting();
         $this->data['clients'] = $clients;
-        return view('Parametrage/Clients.php',$this->data);
+        return view('Parametrage/clients.php',$this->data);
     }
 
     Public function GetProjet()
