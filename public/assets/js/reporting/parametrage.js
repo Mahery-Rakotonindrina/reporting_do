@@ -58,7 +58,7 @@ $(document).ready(function() {
             url = form.attr("data-modif_action");
         $.ajax({
             type: type,
-            url: url,
+            url: base_url() + url,
             data: formdata,
             data_type: 'json',
             processData: false,

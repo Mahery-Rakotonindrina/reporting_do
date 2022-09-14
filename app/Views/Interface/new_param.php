@@ -4,7 +4,7 @@
     <form id="form-param_ajout" action="<?= route_to("add_param")?>" data-modif_action="<?= route_to("edit_param")?>" method="POST">
       <div class="modal-header">
         <div class="row">
-            <h5 class="modal-title col-sm-11" id="exampleModalLongTitle">Nouveaux Parametrages</h5>
+            <h5 class="modal-title col-sm-11" id="exampleModalLongTitle">Nouveaux Paramétrages</h5>
             <label class="switch" style="display: none;">
                 <input type="checkbox" name="rep_status" class="check_is_active">
                 <span class="slider round"></span>
