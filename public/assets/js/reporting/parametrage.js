@@ -83,7 +83,7 @@ $(document).ready(function() {
 
         $.ajax({
             type: 'POST',
-            url: route,
+            url: base_url() + route,
             data: { id: id },
             data_type: 'json',
             success: function(response) {
@@ -122,7 +122,7 @@ $(document).ready(function() {
 
         $.ajax({
             type: 'POST',
-            url: route,
+            url: base_url() + route,
             data: { id: id },
             data_type: 'json',
             success: function(response) {

@@ -70,7 +70,7 @@ $(document).ready(function(){
            
            $.ajax({
             type: 'POST',
-            url: url,
+            url: base_url() + url,
             data:{col : col, date:date, value:value, id_param:id_parametrage},
             data_type:'json',
             success: (response) => {
