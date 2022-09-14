@@ -24,7 +24,6 @@ class Saisie extends BaseController
     public function getInterface()
     {
         $chx_date = $this->request->getpost('chx_date');
-
         $this->request->getpost('date_1') != '' ?
                 $date_debut = $this->request->getpost('date_1'):
                 $date_debut = '';
@@ -36,6 +35,7 @@ class Saisie extends BaseController
         $param = $this->reporting->getParamById($id_param);
 
         $res = getdatefiltre($chx_date, $date_debut, $date_fin);
+        
         $this->data['res'] = $res;
         $this->data['params'] = $param;
         return view('/reporting/table_saisie', $this->data);

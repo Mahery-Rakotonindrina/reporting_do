@@ -45,9 +45,11 @@
 	<body>
         <div class="wrapper">
             <input class="base_url" type="hidden" value="<?=base_url()?>">
-           			
             <div class="contenu" style="width:100%!important;">
-			    <div class="row-fluid">
+			    <div class="row-fluid">  
+					<div class="datepicker_div" style="text-align:center;">
+						<h1>REPORTING DO</h1>
+					</div>
 					<div class="datepicker_div row" style="margin-left: 0;">
 						<input class="form-control col-sm-2" id="datepicker1" name="data" type="text" value="<?= date('d/m/Y', strtotime($debut))?>" data-datedeb="<?= date('d/m/Y', strtotime($debut))?>" style="font-size: 1.4em;spadding: 50px;"/>&nbsp;&nbsp;&nbsp;&nbsp;
 						<input class="form-control col-sm-2" id="datepicker2" name="data" type="text" value="<?= date('d/m/Y', strtotime($fin))?>" data-datefin="<?= date('d/m/Y', strtotime($fin))?>" style="font-size: 1.4em; "/>&nbsp;&nbsp;

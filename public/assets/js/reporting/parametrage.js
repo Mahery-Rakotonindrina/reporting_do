@@ -27,6 +27,15 @@ $(document).ready(function() {
         }
     })
 
+    $(document).on('change', '#taux2_check', function() {
+        if ($(this).is(":checked")) {
+            $('#t_resp_del2').prop("disabled", false)
+        } else {
+            $('#t_resp_del2').prop("disabled", true)
+            $('#t_resp_del2').val('')
+        }
+    })
+
     $(document).on('change', '#client_select', function(e) {
         e.preventDefault();
         getlisteCode();
@@ -50,6 +59,16 @@ $(document).ready(function() {
         var formdata = new FormData(form[0]);
         var url = null;
         var type = form.attr("method");
+        var mail =  $("#mail").val();
+        if ($("#mail_check").is(":checked")) {
+            var check = checkMail(mail);
+            if(check == false){
+                $("#invalid_email").show()
+                return false;
+            }else{
+                $("#invalid_email").hide()  
+            }
+        }
 
         var id = $("#id_parameter").val();
 
@@ -67,11 +86,11 @@ $(document).ready(function() {
                 var result = JSON.parse(response);
                 if (result.message == "OK") {
                     $("#modal_param").modal('hide');
-                    swal("réussi", {
+                    swal("Enregistrement réussi", {
                         icon: "success",
                     });
+                    resetForm()
                 }
-
                 chargerReporting();
             }
         })
@@ -194,19 +213,7 @@ $(document).ready(function() {
     })
 
     $(document).on("click", ".fermer-modal", function() {
-        $('.form-parameter').each(function() {
-            $(this).val('');
-        })
-        $('.switch').hide()
-        $("#projet").prop('disabled', true)
-        $("#projet").val('')
-        $("#code_commande").prop('disabled', true)
-        $("#code_commande").val('')
-
-        $("#mail").prop('disabled', true)
-        $("#mail_check").prop('checked', false)
-        $("#mail").val('')
-
+        resetForm()
     })
 
     $(document).on('click', ".btn-delete", function() {
@@ -215,9 +222,9 @@ $(document).ready(function() {
 
         swal({
                 title: "Suppression",
-                text: "Êtes-vous sur?",
+                text: "Êtes-vous sur de vouloir supprimer ce paramètre?",
                 icon: "warning",
-                buttons: ["non", "oui"],
+                buttons: ["Non", "Oui"],
             })
             .then((willDelete) => {
                 if (willDelete) {
@@ -231,17 +238,19 @@ $(document).ready(function() {
                             if (result.message == 'OK') {
                                 swal("Element supprimer avec succes", {
                                     icon: "success",
+                                    buttons: 'Ok'
                                 });
                             } else {
                                 swal("error de suppression", {
                                     icon: "error",
+                                    buttons: 'Ok'
                                 });
                             }
                             chargerReporting();
                         }
                     })
                 } else {
-                    swal("Supression annuler");
+                    swal("Supression annulée");
                 }
             });
     })
@@ -304,6 +313,11 @@ $(document).ready(function() {
     })
 
 })
+
+var checkMail = (email) => {
+    var EmailRegex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+    return EmailRegex.test(email);
+}
 
 var getlisteCLient = () => {
     var url = base_url() + '/param/client';
@@ -406,11 +420,6 @@ var calculDMT = () => {
 }
 
 var getVisuParam = () => {
-
-    // var date_deb = $("#datepicker3").val()
-    // var date_fin = $("#datepicker4").val()
-
-
     var date_deb = null
     var date_fin = null
     var route = $("#visu_param").val();
@@ -431,7 +440,6 @@ var getVisuParam = () => {
         data_type:'html',
         success:function(response){
             $("#liste_parametrage").html(response);
-            // datatable_visu();
             validateForm();
         }
     })
@@ -477,4 +485,20 @@ var checkInputNumber = () => {
             $(this).val('')
     })
     
+}
+
+var resetForm = () => {
+    $('.form-parameter').each(function() {
+        $(this).val('');
+    })
+    $('.switch').hide()
+    $("#projet").prop('disabled', true)
+    $("#projet").val('')
+    $("#code_commande").prop('disabled', true)
+    $("#code_commande").val('')
+
+    $("#mail").prop('disabled', true)
+    $("#mail_check").prop('checked', false)
+    $("#mail").val('')
+    $("#invalid_email").hide()
 }

@@ -71,7 +71,7 @@
                     <td><?= $param->rep_code?></td>
                 <?php }?>
                 <td><?= $param->nom_application?></td>
-                <?php if (in_array('date_fin_app', $ck)) {?>
+                <?php if (in_array('date_deb_app', $ck)) {?>
                     <td><?= $param->rep_date_debut_application?></td>
                 <?php }?>
                 <?php if (in_array('date_fin_app', $ck)) {?>

@@ -2,7 +2,7 @@
   <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">Interface de saisie</h5>
+        <h5 class="modal-title" id="exampleModalLongTitle">Saisie des données</h5>
       </div>
       <div class="modal-body" style="padding-right:30px;">
           <div class="row"  style="padding-left:30px;">

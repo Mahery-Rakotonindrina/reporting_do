@@ -28,7 +28,7 @@
                 <th rowspan="2">Taux de performance de production</th>
                 <th >Taux de respect <br>de Délai de livraison</th>
                 <th >Volume à controler</th>
-                <th colspan="3">Objectif de conformité: <?= $params[0]->rep_taux_conformite ?>%</th>
+                <th colspan="3">Objectif de conformité: <?= number_format($params[0]->rep_taux_conformite,2,',','')?>%</th>
             </tr>
             <tr>
                 <th><?= $params[0]->rep_unite?></th>
@@ -72,14 +72,14 @@
                         <input type="text" 
                                class="form-control form-input" 
                                id="saisie_qualite_prevision.<?= $date_d ?>" 
-                               value="<?= $resultat->saisie_qualite_prevision != null ? $resultat->saisie_qualite_prevision : '' ?>" 
+                               value="<?= $resultat->saisie_qualite_prevision != null ? number_format($resultat->saisie_qualite_prevision,0,',','') : '' ?>" 
                                readonly>
                     </td>
                     <td>
                         <input type="text" 
                                class="form-control form-input" 
                                id="saisie_planification_wfm.<?= $date_d ?>" 
-                               value="<?= $resultat->saisie_planification_wfm != null ? $resultat->saisie_planification_wfm : ''?>" 
+                               value="<?= $resultat->saisie_planification_wfm != null ? number_format($resultat->saisie_planification_wfm,0,',','') : ''?>" 
                                readonly>
                     </td>
                     <td>
@@ -92,7 +92,7 @@
                         <input type="text" 
                                class="form-control form-input" 
                                id="saisie_volume_a_traite.<?= $date_d ?>" 
-                               value="<?= $resultat->saisie_volume_a_traite != null ? $resultat->saisie_volume_a_traite : ''?>" 
+                               value="<?= $resultat->saisie_volume_a_traite != null ? number_format($resultat->saisie_volume_a_traite,0,',','') : ''?>" 
                                readonly>
                     </td>
                     <td>
@@ -111,7 +111,7 @@
                         <input type="text" 
                                class="form-control form-input" 
                                id="saisie_reliquat.<?= $date_d ?>" 
-                               value="<?= $resultat->saisie_reliquat != null ? $resultat->saisie_reliquat : '' ?>" 
+                               value="<?= $resultat->saisie_reliquat != null ? number_format($resultat->saisie_reliquat,2,',','') : '' ?>" 
                                readonly>
                     </td>
                     <td>
@@ -124,28 +124,28 @@
                         <input type="text" 
                                class="form-control form-input" 
                                id="saisie_cadence.<?= $date_d ?>" 
-                               value="<?= $resultat->saisie_cadence != null ? $resultat->saisie_cadence : '' ?>" 
+                               value="<?= $resultat->saisie_cadence != null ? number_format($resultat->saisie_cadence,2,',','') : '' ?>" 
                                readonly>
                     </td>
                     <td>
                         <input type="number" 
                                class="form-control form-input" 
                                id="saisie_taux_performance_prod.<?= $date_d ?>"  
-                               value="<?= $resultat->saisie_taux_performance_prod != null ? $resultat->saisie_taux_performance_prod : '' ?>" 
+                               value="<?= $resultat->saisie_taux_performance_prod != null ? number_format($resultat->saisie_taux_performance_prod,0,',','') : '' ?>" 
                                readonly>
                     </td>
                     <td>
                         <input type="text" 
                                class="form-control form-input" 
                                id="saisie_taux_respect_delai_livraison.<?= $date_d ?>"  
-                               value="<?= $resultat->saisie_taux_respect_delai_livraison != null ? $resultat->saisie_taux_respect_delai_livraison : '' ?>" 
+                               value="<?= $resultat->saisie_taux_respect_delai_livraison != null ? number_format($resultat->saisie_taux_respect_delai_livraison,0,',','') : '' ?>" 
                                readonly>
                     </td>
                     <td>
                         <input type="text" 
                                class="form-control form-input" 
                                id="saisie_volume_a_controler.<?= $date_d ?>"  
-                               value="<?= $resultat->saisie_volume_a_controler != null ? $resultat->saisie_volume_a_controler : '' ?>" 
+                               value="<?= $resultat->saisie_volume_a_controler != null ? number_format($resultat->saisie_volume_a_controler,0,',','') : '' ?>" 
                                readonly>
                     </td>
                     <td>
@@ -164,7 +164,7 @@
                         <input type="text" 
                                class="form-control form-input" 
                                id="saisie_traitement_conforme.<?= $date_d ?>"  
-                               value="<?= $resultat->saisie_traitement_conforme != null ? $resultat->saisie_traitement_conforme : ''?>" 
+                               value="<?= $resultat->saisie_traitement_conforme != null ? number_format($resultat->saisie_traitement_conforme,2,',','') : ''?>" 
                                readonly>
                     </td>
                 </tr>

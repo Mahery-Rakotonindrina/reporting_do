@@ -100,6 +100,7 @@ Class Parametrage extends BaseController
 
     public function editParam()
     {
+        // var_dump($this->request->getPost());die;
         $date_create = \DateTime::createFromFormat('d/m/Y', $this->request->getpost('date_app'));
         $date_deb_app = $date_create->format('Y-m-d');
         $id = $this->request->getpost('rep_id_parameter');
@@ -116,7 +117,7 @@ Class Parametrage extends BaseController
             'rep_code' => $this->request->getpost('code_commande'),
             'rep_date_debut_application' => $date_deb_app,
             'rep_matricule_creat' => intval($this->session->get('matricule')),
-            'rep_mail_client' =>($this->request->getpost('mail')) !== null ? $this->request->getpost('mail') : '',
+            'rep_mail_client' =>(($this->request->getpost('mail')) !== null) ? $this->request->getpost('mail') : '',
             'rep_unite' => $this->request->getpost('unite_volume'),
             'rep_objectif_cadence' => $this->request->getpost('obj_cadence'),
             'rep_taux_occupation' => $this->request->getpost('taux_occ'),

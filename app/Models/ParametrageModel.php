@@ -57,7 +57,7 @@ Class ParametrageModel extends Model
         
         $this->db->table('reporting_do_parameter')->insert($data);
         $req_id = $this->db->insertID();
-
+        
         return $req_id;
         
     }
@@ -72,7 +72,7 @@ Class ParametrageModel extends Model
             $sql .= " WHERE (rep_date_create::date between '".$debut."' AND '".$fin."')";
         }
         
-        $sql .= " AND rep_is_current =1 and rep_statut in (1,2) ";
+        $sql .= " AND rep_is_current =1 and rep_statut in (1,2) ORDER BY date_creation, nom_client , nom_application ASC";
         
         $query = $this->db->query($sql);
         return $query->getResult();
@@ -140,7 +140,14 @@ Class ParametrageModel extends Model
                         rep_is_current, 
                         rps.id as statut, 
                         rep_date_debut_application,
-                        rep_date_fin_application
+                        rep_date_fin_application,
+                        rep_objectif_delai_median, 
+                        rep_objectif_delai_moyen, 
+                        rep_taux_respect_delai, 
+                        rep_taux_respect_delai_2,
+                        rep_taux_controle,
+                        rep_taux_conformite, 
+                        rep_graphe
                     FROM reporting_do_parameter
                 inner join gu_client gc on gc.id_client = rep_id_client
                 inner join gu_application ga on ga.id_application = rep_id_projet

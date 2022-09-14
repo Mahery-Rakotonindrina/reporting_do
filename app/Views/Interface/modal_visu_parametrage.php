@@ -19,7 +19,7 @@
             <input type="hidden" id="visu_param" value="<?= route_to("visu_param")?>">
             <div class="form-group row col-sm-2 ml-auto" style="padding-left:40px;">
               <div class="button-group col-sm-10">
-                <button type="button" class="btn btn-default btn-sm dropdown-toggle form-control" data-toggle="dropdown"><span class="fa fa-cog"> </span> Colonne</span></button>
+                <button type="button" class="btn btn-default btn-sm dropdown-toggle form-control" data-toggle="dropdown"><span class="fa fa-cog"> </span> Autres colonnes</span></button>
                 <ul class="dropdown-menu" style="width: 800px;">
                   <div class="row">
                     <div class="col-sm-4" style="margin-left:10px">

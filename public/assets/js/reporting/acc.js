@@ -65,6 +65,7 @@ function datatable() {
         language: {
             "url": "//cdn.datatables.net/plug-ins/1.11.4/i18n/fr_fr.json"
         },
+        pageLength: 25,
         alphabetSearch: {
             column: 2
         }
