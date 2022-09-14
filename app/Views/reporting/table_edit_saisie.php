@@ -51,7 +51,7 @@
             $date = $resultat->saisie_date;
             $date = new DateTime($date);
             $date_week = $date->format('W');
-            $date_d = $date->format('Y-m-d');
+            $date_d = $date->format('d/m/Y');
             ?>
                 <tr class="center text-center">
                     <td style="padding-top:15px"><?= 'S '.$date_week ?></td>

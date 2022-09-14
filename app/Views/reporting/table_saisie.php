@@ -17,10 +17,13 @@
         </thead>
         <tbody>
             <?php 
-            foreach($res as $resultat) { ?>
+            foreach($res as $resultat) { 
+                $date_saisie =  \DateTime::createFromFormat('Y-m-d', $resultat['date_saisi']);
+                $date_saisie = $date_saisie->format('d/m/Y');
+                ?>
                 <tr class="center text-center">
                     <td style="padding-top:15px"><?= 'S '.$resultat['week_saisi'] ?></td>
-                    <td style="padding-top:15px; white-space: nowrap;" data-date_saisi='<?= $resultat['date_saisi'] ?>' id="date_saisi"><?= $resultat['date_saisi'] ?></td>
+                    <td style="padding-top:15px; white-space: nowrap;" data-date_saisi='<?= $resultat['date_saisi'] ?>' id="date_saisi"><?= $date_saisie ?></td>
                     <td><input type="number" class="form-control form-input" id="saisie_volume_previsionnel.<?= $resultat['date_saisi'] ?>""></td>
                     <td><input type="number" class="form-control form-input" id="saisie_volume_recu.<?= $resultat['date_saisi'] ?>""></td>
                     <td><input type="number" class="form-control form-input" id="saisie_planification_rp.<?= $resultat['date_saisi'] ?>""></td>

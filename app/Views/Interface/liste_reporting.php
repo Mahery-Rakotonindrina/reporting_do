@@ -9,15 +9,18 @@
     </thead>
 
     <tbody>
-        <?php foreach($parameters as $param) {?>
-            <?php 
+        <?php foreach($parameters as $param) {
             $style = '';
             in_array($param->rep_id_parameter, $liste_id_parametres) ?
                     $style = "display:none;" :
                     $style = "";
+
+            $date_creation =  \DateTime::createFromFormat('Y-m-d', $param->date_creation);
+            $date_creation = $date_creation->format('d/m/Y');
+
             ?>
             <tr class="center text-center">
-                <td><?= $param->date_creation?></td>
+                <td><?= $date_creation ?></td>
                 <td><?= $param->nom_client?></td>
                 <td><?= $param->nom_application?></td>
                 <td style="text-align: left;">
