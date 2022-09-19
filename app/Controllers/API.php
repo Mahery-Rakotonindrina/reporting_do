@@ -38,7 +38,7 @@ class API extends BaseController
             }else{
                 $retour = array(
                     'status' => 400,
-                    'message' => 'Error!! Please verify your request method and make sure that it is a POST ;)'
+                    'message' => 'Error!! Please verify your request method and make sure that it is a GET ;)'
                 );
             }
         }else{
@@ -70,7 +70,7 @@ class API extends BaseController
             }else{
                 $retour = array(
                     'status' => 400,
-                    'message' => 'Error!! Please verify your request method and make sure that it is a POST ;)'
+                    'message' => 'Error!! Please verify your request method and make sure that it is a GET ;)'
                 );
             }
         }else{
@@ -80,6 +80,36 @@ class API extends BaseController
             );
         }
 
+        return $this->respond($retour);
+    }
+
+    public function getAllClient()
+    {
+        $retour = '';
+        $data = getallheaders()['Authorization'];
+
+        if(trim($data) == '43908e4829b22dd58c9bca6f02a6782a'){
+            if($_SERVER['REQUEST_METHOD'] === 'GET'){
+                $data_client = $this->parametrage->getAllDataForQuicksight();
+
+                count($data_client) != 0 ?
+                    $retour = $data_client:
+                    $retour = array(
+                        'status' => 204,
+                        'message' => 'Warning!! No content, data is empty :)'
+                    );
+            }else{
+                $retour = array(
+                    'status' => 400,
+                    'message' => 'Error!! Please verify your request method and make sure that it is a GET ;)'
+                );
+            }
+        }else{
+            $retour = array(
+                'status' => 403 ,
+                'message' => 'sorry, you don\'t have access to this request, please check your token'
+            );
+        }
         return $this->respond($retour);
     }
 }

@@ -212,4 +212,15 @@ Class ParametrageModel extends Model
         $query = $this->query($sql);
         return $query->getResult();
     }
+
+    public function getAllDataForQuicksight(){
+        $sql = "SELECT id_application, nom_application, code,lib_bu,gu_client.id_client,nom_client
+                    FROM gu_application
+                    inner join gu_client on gu_client.id_client = gu_application.id_client
+                    inner join business_unit on business_unit.id_bu = gu_application.id_bu
+                    where business_unit.id_bu in (3,4) order by id_application asc";
+
+        $query = $this->query($sql);
+        return $query->getResult();
+    }
 }
