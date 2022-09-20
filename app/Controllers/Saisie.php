@@ -53,7 +53,7 @@ class Saisie extends BaseController
 
         $insert = $this->saisie->insertSaisie($date, $colonne, $valeur, $id_parametrage);
         if($insert){
-            $date_J_moin1 = \DateTime::createFromFormat('Y-m-d', $date);
+            $date_J_moin1 = \DateTime::createFromFormat('d/m/Y', $date);
             $date_J_moin1->modify('-1 day');
             $date_J_moin1 = $date_J_moin1->format('Y-m-d');
             $this->calculerAuto($date, $id_parametrage, $date_J_moin1);
@@ -202,11 +202,11 @@ class Saisie extends BaseController
 
             $id_param = $this->request->getPost('param');
             $date_test = $this->request->getPost('date_J');
-            $date_J =  \DateTime::createFromFormat('Y-m-d', $date_test);
+            $date_J =  \DateTime::createFromFormat('d/m/Y', $date_test);
             $date_J->modify('+'.$i.'day');
             $date_J = $date_J->format('Y-m-d');
 
-            $date_J_plus1 = \DateTime::createFromFormat('Y-m-d', $date_test);
+            $date_J_plus1 = \DateTime::createFromFormat('d/m/Y', $date_test);
             $date_J_plus1->modify('+'.$j.'day');
             $date_J_plus1 = $date_J_plus1->format('Y-m-d');
 

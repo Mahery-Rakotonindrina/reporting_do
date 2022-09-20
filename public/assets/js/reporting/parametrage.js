@@ -348,7 +348,7 @@ var getlisteProjet = () => {
         success: function(response) {
             $('#projet').prop("disabled", false);
             $('#code_commande').prop("disabled", false);
-            (code == null) ? $('#projet').append('<option value="0" >Selectionner un projet</option>') : '';
+            (code == null) ? $('#projet').append('<option value="0" >Sélectionner un projet</option>') : '';
 
             var result = null;
             if (response != '') {
@@ -381,7 +381,7 @@ var getlisteCode = (code = null) => {
         data_type: 'json',
         success: function(response) {
             if (projet == null) {
-                $('#code_commande').append('<option value="0" selected disabled >Selectionner un projet</option>')
+                $('#code_commande').append('<option value="0" selected disabled >Sélectionner un code commande</option>')
             }
             var result = null;
             if (response != '') {
