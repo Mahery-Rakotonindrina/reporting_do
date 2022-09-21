@@ -135,81 +135,25 @@ $(document).ready(function() {
 
     $(document).on('click', "#btn_edit_param", function(e) {
         e.preventDefault();
-        $('.switch').show();
-        var id = $(this).attr('data-id');
-        var route = $(this).attr('data-route');
-
-        $.ajax({
-            type: 'POST',
-            url: base_url() + route,
-            data: { id: id },
-            data_type: 'json',
-            success: function(response) {
-                var result = JSON.parse(response);
-                $('#id_parameter').val(result.rep_id_parameter)
-                $('#client_select').val(result.rep_id_client)
-
-                if (result.rep_mail_client != '') {
-                    $("#mail_check").prop('checked', true)
-                    $("#mail").val(result.rep_mail_client)
-                    $("#mail").prop('disabled', false)
+        let saisie = $(this).attr('data-saisie');
+        if(saisie != ""){
+            swal({
+                title: "Attention",
+                text: "Vous êtes sur le point de modifier une paramètre qui contien déjà une ou plusieur données",
+                icon: "warning",
+                buttons: ["Non", "Oui"],
+            })
+            .then((willChange) => {
+                if (willChange) {
+                    editParam(this);
                 } else {
-                    $("#mail").prop('disabled', true)
-                    $("#mail_check").prop('checked', false)
-                    $("#mail").val('')
+                    swal("Modification annulée");
                 }
-                getlisteCode(result.rep_code);
-                $("#code_commande").prop('disabled', false)
-                // $("#code_commande").val('VSR');
-
-                getlisteProjet();
-                $("#projet").prop('disables', false)
-                $("#projet").val(result.rep_id_projet)
-
-                $("#unite_volume").val(result.rep_unite)
-                $("#obj_cadence").val(result.rep_objectif_cadence)
-                $("#taux_occupation").val(result.rep_taux_occupation)
-
-                $("#dmt").val(result.rep_dmt)
-                $("#reliquat").val(result.rep_reliquat_initial)
-                var date = new Date(result.rep_date_debut_application);
-                date = (date.toLocaleString('en-UK'));
-                date = date.split(',')
-                date = date[0];
-                $("#date_app").val(date)
-                    // $("#date_app").val(result.rep_date_creat)
-                if (result.rep_objectif_delai_median != null) {
-                    $("#obj_med_check").prop('checked', true)
-                    $("#obj_del_median").val(result.rep_objectif_delai_median)
-                    $("#obj_del_median").prop('disabled', false)
-                } else {
-                    $("#obj_med_check").prop('checked', false)
-                    $("#obj_del_median").val("")
-                    $("#obj_del_median").prop('disabled', true)
-                }
-                if (result.rep_objectif_delai_moyen != null) {
-                    $("#obj_moy_check").prop('checked', true)
-                    $("#obj_del_moyen").prop('disabled', false)
-                    $("#obj_del_moyen").val(result.rep_objectif_delai_moyen)
-                } else {
-                    $("#obj_moy_check").prop('checked', false)
-                    $("#obj_del_moyen").prop('disabled', true)
-                    $("#obj_del_moyen").val('')
-                }
-
-                $("#t_resp_del").val(result.rep_taux_respect_delai)
-                $("#t_resp_del2").val(result.rep_taux_respect_delai_2)
-                $("#t_ctrl").val(result.rep_taux_controle)
-                $("#t_cnft").val(result.rep_taux_conformite)
-                result.rep_graphe == "Oui" ?
-                    $("#graphe_show").prop("checked", true) :
-                    $("#graphe_show").prop("checked", false);
-                result.rep_statut == 1 ?
-                    $('.check_is_active').prop("checked", true) :
-                    $('.check_is_active').prop("checked", false);
-
-            }
-        })
+            });
+        }else{
+            editParam(this);
+        }
+       
     })
 
     $(document).on("click", ".fermer-modal", function() {
@@ -501,4 +445,82 @@ var resetForm = () => {
     $("#mail_check").prop('checked', false)
     $("#mail").val('')
     $("#invalid_email").hide()
+}
+
+var editParam = (btn) => {
+    $("#modal_param").modal('show');
+    $('.switch').show();
+    var id = $(btn).attr('data-id');
+    var route = $(btn).attr('data-route');
+
+    $.ajax({
+        type: 'POST',
+        url: base_url() + route,
+        data: { id: id },
+        data_type: 'json',
+        success: function(response) {
+            var result = JSON.parse(response);
+            $('#id_parameter').val(result.rep_id_parameter)
+            $('#client_select').val(result.rep_id_client)
+
+            if (result.rep_mail_client != '') {
+                $("#mail_check").prop('checked', true)
+                $("#mail").val(result.rep_mail_client)
+                $("#mail").prop('disabled', false)
+            } else {
+                $("#mail").prop('disabled', true)
+                $("#mail_check").prop('checked', false)
+                $("#mail").val('')
+            }
+            getlisteCode(result.rep_code);
+            $("#code_commande").prop('disabled', false)
+            // $("#code_commande").val('VSR');
+
+            getlisteProjet();
+            $("#projet").prop('disables', false)
+            $("#projet").val(result.rep_id_projet)
+
+            $("#unite_volume").val(result.rep_unite)
+            $("#obj_cadence").val(result.rep_objectif_cadence)
+            $("#taux_occupation").val(result.rep_taux_occupation)
+
+            $("#dmt").val(result.rep_dmt)
+            $("#reliquat").val(result.rep_reliquat_initial)
+            var date = new Date(result.rep_date_debut_application);
+            date = (date.toLocaleString('en-UK'));
+            date = date.split(',')
+            date = date[0];
+            $("#date_app").val(date)
+                // $("#date_app").val(result.rep_date_creat)
+            if (result.rep_objectif_delai_median != null) {
+                $("#obj_med_check").prop('checked', true)
+                $("#obj_del_median").val(result.rep_objectif_delai_median)
+                $("#obj_del_median").prop('disabled', false)
+            } else {
+                $("#obj_med_check").prop('checked', false)
+                $("#obj_del_median").val("")
+                $("#obj_del_median").prop('disabled', true)
+            }
+            if (result.rep_objectif_delai_moyen != null) {
+                $("#obj_moy_check").prop('checked', true)
+                $("#obj_del_moyen").prop('disabled', false)
+                $("#obj_del_moyen").val(result.rep_objectif_delai_moyen)
+            } else {
+                $("#obj_moy_check").prop('checked', false)
+                $("#obj_del_moyen").prop('disabled', true)
+                $("#obj_del_moyen").val('')
+            }
+
+            $("#t_resp_del").val(result.rep_taux_respect_delai)
+            $("#t_resp_del2").val(result.rep_taux_respect_delai_2)
+            $("#t_ctrl").val(result.rep_taux_controle)
+            $("#t_cnft").val(result.rep_taux_conformite)
+            result.rep_graphe == "Oui" ?
+                $("#graphe_show").prop("checked", true) :
+                $("#graphe_show").prop("checked", false);
+            result.rep_statut == 1 ?
+                $('.check_is_active').prop("checked", true) :
+                $('.check_is_active').prop("checked", false);
+        }
+    })
 }

@@ -78,7 +78,7 @@
                                 <label class="control-label col-sm-4">Objectif cadence
                                     <span class="text-danger obligatoire">(*)</span>  :</label>
                                 <div class="col-sm-7">
-                                    <input type="number" id="obj_cadence" name="obj_cadence" maxlength="50" class="form-control form-parameter field-profil form-number" placeholder="" required>
+                                    <input type="number" step=0.01 id="obj_cadence" name="obj_cadence" maxlength="50" class="form-control form-parameter field-profil" placeholder="" required>
                                 </div>
                             </div>
                         </div>
@@ -90,7 +90,7 @@
                                 <label class="control-label col-sm-4">Taux d'occupation
                                     <span class="text-danger obligatoire">(*)</span>  :</label>
                                 <div class="col-sm-6">
-                                    <input id="taux_occupation" type="number" name="taux_occ" maxlength="50" class="form-control form-parameter field-profil form-number" placeholder="" required>
+                                    <input id="taux_occupation" type="number" step=0.01 name="taux_occ" maxlength="50" class="form-control form-parameter field-profil" placeholder="" required>
                                 </div>
                             </div>
                         </div>
@@ -100,7 +100,7 @@
                                 <label class="control-label col-sm-4">DMT
                                     <span class="text-danger obligatoire">(*)</span>  :</label>
                                 <div class="col-sm-7">
-                                    <input id="dmt" type="text" name="dmt" maxlength="50" class="form-control form-parameter field-profil form-number" placeholder="" readonly>
+                                    <input id="dmt" type="text" name="dmt" maxlength="50" class="form-control form-parameter field-profil" placeholder="" readonly>
                                 </div>
                             </div>
                         </div>
@@ -112,7 +112,7 @@
                                 <label class="control-label col-sm-4">Reliquat Initial
                                     <span class="text-danger obligatoire">(*)</span>  :</label>
                                 <div class="col-sm-6">
-                                    <input id="reliquat" type="number" name="rel_init" maxlength="50" class="form-control form-parameter field-profil form-number" placeholder="" required>
+                                    <input id="reliquat" type="number" name="rel_init" maxlength="50" class="form-control form-parameter field-profil" placeholder="" required>
                                 </div>
                             </div>
                         </div>
@@ -133,7 +133,7 @@
                             <div class="row form-group" id="form-group-profil-ajout">
                                 <label class="control-label col-sm-4"><input type="checkbox" name="obj_med_check" id="obj_med_check">&nbsp;&nbsp;&nbsp;Obj délai médian :</label>
                                 <div class="col-sm-6">
-                                    <input type="number" id="obj_del_median" name="obj_del_median" maxlength="50" class="form-control form-parameter field-profil form-number" placeholder="" disabled>
+                                    <input type="number" step=0.01 id="obj_del_median" name="obj_del_median" maxlength="50" class="form-control form-parameter field-profil" placeholder="" disabled>
                                 </div>
                             </div>
                         </div>
@@ -142,7 +142,7 @@
                             <div class="row form-group" id="form-group-profil-ajout">
                                 <label class="control-label col-sm-4"><input type="checkbox" name="obj_moy_check" id="obj_moy_check">&nbsp;&nbsp;&nbsp;Obj délai moyen :</label>
                                 <div class="col-sm-7">
-                                    <input type="number" id="obj_del_moyen" name="obj_del_moyen" maxlength="50" class="form-control form-parameter field-profil form-number" placeholder="" disabled>
+                                    <input type="number" step=0.01 id="obj_del_moyen" name="obj_del_moyen" maxlength="50" class="form-control form-parameter field-profil" placeholder="" disabled>
                                 </div>
                             </div>
                         </div>
@@ -156,7 +156,7 @@
                                 <label class="control-label col-sm-4">Taux de respect du délai 
                                     <span class="text-danger obligatoire">(*)</span>  :</label>
                                 <div class="col-sm-6">
-                                    <input type="number" id="t_resp_del" name="t_resp_del" maxlength="50" class="form-control form-parameter field-profil form-number" placeholder="" required>
+                                    <input type="number" step=0.01 id="t_resp_del" name="t_resp_del" maxlength="50" class="form-control form-parameter field-profil" placeholder="" required>
                                 </div>
                             </div>
                         </div>
@@ -165,7 +165,7 @@
                             <div class="row form-group" id="form-group-profil-ajout">
                                 <label class="control-label col-sm-4"><input type="checkbox" name="taux2_check" id="taux2_check">&nbsp;&nbsp;&nbsp;2ème Taux de respect du délai :</label>
                                 <div class="col-sm-7">
-                                    <input type="number" id="t_resp_del2" name="t_resp_del2" maxlength="50" class="form-control form-parameter field-profil form-number" placeholder="" disabled>
+                                    <input type="number" step=0.01 id="t_resp_del2" name="t_resp_del2" maxlength="50" class="form-control form-parameter field-profil" placeholder="" disabled>
                                 </div>
                             </div>
                         </div>
@@ -177,7 +177,7 @@
                                 <label class="control-label col-sm-4">Taux de contrôle
                                     <span class="text-danger obligatoire">(*)</span>  :</label>
                                 <div class="col-sm-6">
-                                    <input type="number" id="t_ctrl" name="t_ctrl" maxlength="50" class="form-control form-parameter field-profil form-number" placeholder="" required>
+                                    <input type="number" step=0.01 id="t_ctrl" name="t_ctrl" maxlength="50" class="form-control form-parameter field-profil" placeholder="" required>
                                 </div>
                             </div>
                         </div>
@@ -187,7 +187,7 @@
                                 <label class="control-label col-sm-4">Taux de conformité
                                     <span class="text-danger obligatoire">(*)</span>  :</label>
                                 <div class="col-sm-7">
-                                    <input type="number" id="t_cnft" name="t_cnft" maxlength="50" class="form-control form-parameter field-profil form-number" placeholder="" required>
+                                    <input type="number" step=0.01 id="t_cnft" name="t_cnft" maxlength="50" class="form-control form-parameter field-profil" placeholder="" required>
                                 </div>
                             </div>
                         </div>

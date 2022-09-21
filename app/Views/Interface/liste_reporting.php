@@ -11,9 +11,14 @@
     <tbody>
         <?php foreach($parameters as $param) {
             $style = '';
+            $saisie= '';
             in_array($param->rep_id_parameter, $liste_id_parametres) ?
                     $style = "display:none;" :
                     $style = "";
+
+            $style != "" ? 
+                $saisie = "Is":
+                $saisie = "";
 
             $date_creation =  \DateTime::createFromFormat('Y-m-d', $param->date_creation);
             $date_creation = $date_creation->format('d/m/Y');
@@ -45,9 +50,9 @@
                         <span class="fa fa-eye"></span>
                     </button>&nbsp;
 
-                    <button type="button" id="btn_edit_param" class="btn btn-success" title="Editer paramètre" 
-                            data-toggle="modal" data-target="#modal_param" 
+                    <button type="button" id="btn_edit_param" class="btn btn-success" title="Editer paramètre"  
                             data-id="<?= $param->rep_id_parameter?>"
+                            data-saisie = "<?= $saisie ?>"
                             data-route="<?= route_to("show_param")?>">
                         <span class="fa fa-highlighter"></span>
                     </button>&nbsp;
