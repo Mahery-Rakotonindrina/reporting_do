@@ -166,7 +166,7 @@ $(document).ready(function() {
 
         swal({
                 title: "Suppression",
-                text: "Êtes-vous sur de vouloir supprimer ce paramètre?",
+                text: "Êtes-vous sûr de vouloir supprimer ce paramètre?",
                 icon: "warning",
                 buttons: ["Non", "Oui"],
             })
@@ -180,7 +180,7 @@ $(document).ready(function() {
                         success: (response) => {
                             var result = JSON.parse(response);
                             if (result.message == 'OK') {
-                                swal("Element supprimer avec succes", {
+                                swal("Element supprimé avec succes", {
                                     icon: "success",
                                     buttons: 'Ok'
                                 });

@@ -3,6 +3,7 @@
         <thead>
             <tr class="center text-center">
                 <th>Date</th>
+                <th>Matricule</th>
                 <th>Client</th>
                 <th>Email</th>
                 <th>Code Commande</th>
@@ -29,6 +30,7 @@
             <?php foreach($history as $param) {?>
                 <tr class="center text-center">
                     <td style="padding-top:15px; white-space: nowrap;"><?= $param->date_creation?></td>
+                    <td><?= $param->rep_matricule_creat?></td>
                     <td><?= $param->nom_client?></td>
                     <td><?= $param->rep_mail_client?></td>
                     <td><?= $param->code?></td>
