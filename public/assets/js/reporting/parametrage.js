@@ -139,7 +139,7 @@ $(document).ready(function() {
         if(saisie != ""){
             swal({
                 title: "Attention",
-                text: "Vous êtes sur le point de modifier une paramètre qui contien déjà une ou plusieur données",
+                text: "Vous êtes sur le point de modifier une paramètre qui contient déjà une ou plusieurs données",
                 icon: "warning",
                 buttons: ["Non", "Oui"],
             })
@@ -220,6 +220,7 @@ $(document).ready(function() {
             data_type: 'html',
             success: function(response) {
                 $("#liste_histoty").html(response);
+                datatablehistory();
             }
         })
     })
@@ -523,4 +524,17 @@ var editParam = (btn) => {
                 $('.check_is_active').prop("checked", false);
         }
     })
+}
+
+function datatablehistory() {
+    $('#Table_history').dataTable({
+        responsive: true,
+        language: {
+            "url": "//cdn.datatables.net/plug-ins/1.11.4/i18n/fr_fr.json"
+        },
+        pageLength: 25,
+        alphabetSearch: {
+            column: 2
+        }
+    });
 }
