@@ -28,7 +28,7 @@
         <tbody>
             <?php foreach($history as $param) {?>
                 <tr class="center text-center">
-                    <td><?= $param->date_creation?></td>
+                    <td style="padding-top:15px; white-space: nowrap;"><?= $param->date_creation?></td>
                     <td><?= $param->nom_client?></td>
                     <td><?= $param->rep_mail_client?></td>
                     <td><?= $param->code?></td>
