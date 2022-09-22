@@ -24,14 +24,14 @@
                 <tr class="center text-center">
                     <td style="padding-top:15px"><?= 'S '.$resultat['week_saisi'] ?></td>
                     <td style="padding-top:15px; white-space: nowrap;" data-date_saisi='<?= $resultat['date_saisi'] ?>' id="date_saisi"><?= $date_saisie ?></td>
-                    <td><input type="number" class="form-control form-input" id="saisie_volume_previsionnel.<?= $resultat['date_saisi'] ?>""></td>
-                    <td><input type="number" class="form-control form-input" id="saisie_volume_recu.<?= $resultat['date_saisi'] ?>""></td>
-                    <td><input type="number" class="form-control form-input" id="saisie_planification_rp.<?= $resultat['date_saisi'] ?>""></td>
-                    <td><input type="number" class="form-control form-input" id="saisie_volume_bloque.<?= $resultat['date_saisi'] ?>""></td>
-                    <td><input type="number" class="form-control form-input" id="saisie_volume_traite.<?= $resultat['date_saisi'] ?>""></td>
-                    <td><input type="number" class="form-control form-input" id="saisie_hprod.<?= $resultat['date_saisi'] ?>""></td>
-                    <td><input type="number" class="form-control form-input" id="saisie_volume_controle.<?= $resultat['date_saisi'] ?>""></td>
-                    <td><input type="number" class="form-control form-input" id="saisie_volume_ko.<?= $resultat['date_saisi'] ?>""></td>
+                    <td><input type="number" class="form-control form-input" id="saisie_volume_previsionnel.<?= $date_saisie ?>""></td>
+                    <td><input type="number" class="form-control form-input" id="saisie_volume_recu.<?= $date_saisie ?>""></td>
+                    <td><input type="number" class="form-control form-input" id="saisie_planification_rp.<?= $date_saisie ?>""></td>
+                    <td><input type="number" class="form-control form-input" id="saisie_volume_bloque.<?= $date_saisie ?>""></td>
+                    <td><input type="number" class="form-control form-input" id="saisie_volume_traite.<?= $date_saisie ?>""></td>
+                    <td><input type="number" class="form-control form-input" id="saisie_hprod.<?= $date_saisie ?>""></td>
+                    <td><input type="number" class="form-control form-input" id="saisie_volume_controle.<?= $date_saisie ?>""></td>
+                    <td><input type="number" class="form-control form-input" id="saisie_volume_ko.<?= $date_saisie ?>""></td>
                 </tr>
             <?php } ?>
         </tbody>
