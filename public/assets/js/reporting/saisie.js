@@ -53,11 +53,15 @@ $(document).ready(function(){
         $('#id_parametrage-edit').val(value);
         
     })
+    $(document).on('click','.btn_interface_saisie', function(){
+        $('.repertoir').val('saisie-rep');
+    })
 
     $(document).on('change', '.form-input', function(){
         var url = $('#route_insert_saisi').val();
         var id_parametrage = '';
-        $('#route_insert_saisi').attr("data-mod") != 'edit-rep' ?
+
+        $('.repertoir').val() != '' ?
             id_parametrage = $('#id_parametrage').val():
             id_parametrage = $('#id_parametrage-edit').val();
 
@@ -74,7 +78,7 @@ $(document).ready(function(){
             data:{col : col, date:date, value:value, id_param:id_parametrage},
             data_type:'json',
             success: (response) => {
-                if($('#route_insert_saisi').attr("data-mod") == 'edit-rep'){
+                if( $('.repertoir').val() == ''){
                     const url_2 = base_url() + '/saisie/updateJPlus';
                     $.ajax({
                         type:'POST',
@@ -92,6 +96,7 @@ $(document).ready(function(){
     })
     
     $(document).on('click', '.btn-fermer_saisie', function(){
+        $('.repertoir').val('');
         $('.form-input').val('');
         $('#table_interface').hide();
         $('#table_edit_interface').hide();

@@ -50,7 +50,6 @@ class Saisie extends BaseController
         
         $id_parametrage = $this->request->getpost('id_param');
         
-
         $insert = $this->saisie->insertSaisie($date, $colonne, $valeur, $id_parametrage);
         if($insert){
             $date_J_moin1 = \DateTime::createFromFormat('d/m/Y', $date);

@@ -8,6 +8,7 @@
           <div class="row"  style="padding-left:30px;">
               <input type="hidden" id='route_interface_saisi' value="<?= route_to('interface_saisie')?>">
               <input type="hidden" id='id_parametrage'>
+              <input type="hidden" class='repertoir' value='saisie-rep'>
               <div class="form-group row col-sm-4" style="font-size: 1.4em;">
                 <label class="col-sm-3" style="padding-top: 5px;">Date :</label>
                 <select id="date_saisi_reporting" class="form-control col-sm-8"> 
