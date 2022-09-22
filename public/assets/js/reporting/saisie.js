@@ -44,6 +44,7 @@ $(document).ready(function(){
         crtl_date()
         var value = $(this).attr('data-id');
         $('#id_parametrage').val(value);
+        $('.repertoir').val('saisie_rep');
     })
 
     $(document).on('click', '.btn-edit-reporting', function(){
@@ -51,8 +52,9 @@ $(document).ready(function(){
         crtl_date(text);
         var value = $(this).attr('data-id');
         $('#id_parametrage-edit').val(value);
-        
+        $('.repertoir').val('');
     })
+
     $(document).on('click','.btn_interface_saisie', function(){
         $('.repertoir').val('saisie-rep');
     })
@@ -60,7 +62,6 @@ $(document).ready(function(){
     $(document).on('change', '.form-input', function(){
         var url = $('#route_insert_saisi').val();
         var id_parametrage = '';
-
         $('.repertoir').val() != '' ?
             id_parametrage = $('#id_parametrage').val():
             id_parametrage = $('#id_parametrage-edit').val();

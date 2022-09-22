@@ -49,8 +49,10 @@ class Saisie extends BaseController
         ($valeur != '') ? $valeur = $valeur : $valeur = 'NULL';
         
         $id_parametrage = $this->request->getpost('id_param');
+        $date_format = \DateTime::createFromFormat('d/m/Y', $date);
+        $date_format = $date_format->format('Y-m-d');
         
-        $insert = $this->saisie->insertSaisie($date, $colonne, $valeur, $id_parametrage);
+        $insert = $this->saisie->insertSaisie($date_format, $colonne, $valeur, $id_parametrage);
         if($insert){
             $date_J_moin1 = \DateTime::createFromFormat('d/m/Y', $date);
             $date_J_moin1->modify('-1 day');

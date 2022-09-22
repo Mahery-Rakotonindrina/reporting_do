@@ -23,12 +23,13 @@ class SaisieModel extends Model
         }else{
             $sql = "UPDATE ".$this->table." SET ".$colonne." = ".$valeur." WHERE saisie_date = '".$date."' AND saisie_id_parameter = ".$id_param;
         }
+
         $query = $this->db->query($sql);
         return $query;
     }
 
     private function verifsaisie($date, $id_param){
-        $sql_if = "SELECT * from ".$this->table." WHERE saisie_date = '".$date."' AND saisie_id_parameter = ".$id_param;       
+        $sql_if = "SELECT * from ".$this->table." WHERE saisie_date = '".$date."' AND saisie_id_parameter = ".$id_param;
         $query = $this->db->query($sql_if);
 
         return $query->getResult();
