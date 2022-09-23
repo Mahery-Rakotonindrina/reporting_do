@@ -16,7 +16,7 @@
                 <th rowspan="2">Date</th>
                 <th style="background-color:rgb(242, 242, 217);">Volume prévisionnel</th>
                 <th style="background-color:rgb(242, 242, 217);">Volume reçu</th>
-                <th rowspan="2">Qualité de prévidion </br> (80 & 120%)</th>
+                <th rowspan="2">Qualité de prévision </br> (80 & 120 %)</th>
                 <th rowspan="2">Planification WFM</th>
                 <th style="background-color:rgb(242, 242, 217);" rowspan="2">Planification RP</th>
                 <th >Volume A traiter</th>
@@ -27,7 +27,7 @@
                 <th >Cadence</th>
                 <th rowspan="2">Taux de performance de production</th>
                 <th >Taux de respect <br>de Délai de livraison</th>
-                <th >Volume à controler</th>
+                <th >Volume à contrôler</th>
                 <th colspan="3">Objectif de conformité: <?= number_format($params[0]->rep_taux_conformite,2,',','')?>%</th>
             </tr>
             <tr>
@@ -40,9 +40,9 @@
                 <th><?= $params[0]->rep_objectif_cadence?></th>
                 <th><?= $params[0]->rep_taux_respect_delai?>% à J</th>
                 <th><?= $params[0]->rep_taux_controle?></th>
-                <th style="background-color:rgb(242, 242, 217);">Volume controlés</th>
+                <th style="background-color:rgb(242, 242, 217);">Volume contrôlés</th>
                 <th style="background-color:rgb(242, 242, 217);">Volume KO</th>
-                <th >% Taitement conformes</th>
+                <th >% Traitement conforme</th>
             </tr>
         </thead>
         <tbody>
