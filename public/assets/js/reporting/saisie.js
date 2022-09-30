@@ -147,6 +147,7 @@ function getdata(text = ''){
 var datatable_saise = () => {
     $('#table_saisi-edit').dataTable({
         responsive: true,
+        "scrollX": true,
         language: {
             "url": "//cdn.datatables.net/plug-ins/1.11.4/i18n/fr_fr.json"
         },
@@ -199,6 +200,7 @@ var load_data_saisie = () => {
 var datatable_visu_saisie= () => {
     $('#table_visu_saisie').dataTable({
         responsive: true,
+        "scrollX": true,
         language: {
             "url": "//cdn.datatables.net/plug-ins/1.11.4/i18n/fr_fr.json"
         },

@@ -1,4 +1,4 @@
-<div style="overflow:auto">
+<div>
     <table class="table table-striped tableFixHead table-bordered table-responsive center text-center" id="table_visu_saisie" style="font-size:1em">
         <thead>
             <tr>

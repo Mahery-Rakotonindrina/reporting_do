@@ -529,6 +529,7 @@ var editParam = (btn) => {
 function datatablehistory() {
     $('#Table_history').dataTable({
         responsive: true,
+        "scrollX": true,
         language: {
             "url": "//cdn.datatables.net/plug-ins/1.11.4/i18n/fr_fr.json"
         },

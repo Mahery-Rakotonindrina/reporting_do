@@ -1,6 +1,6 @@
-<div style="overflow:auto">
+<div>
     <input type="hidden" id='route_insert_saisi' value="<?= route_to('insert_update_saisie') ?>" data-mod='edit-rep'>
-    <table class="table table-striped tableFixHead table-bordered table-responsive center text-center" id="table_saisi-edit" style="font-size:1em">
+    <table class="table table-striped tableFixHead table-bordered table-responsive center text-center " id="table_saisi-edit" style="font-size:1em">
     <thead>
             <tr>
                 <th colspan="2" rowspan="2"></th>
@@ -11,7 +11,7 @@
                 <th colspan="7">KPI Performance interne</th>
                 <th colspan="5">KPI Engagement Client</th>
             </tr>
-            <tr class="center text-center">
+            <tr class="centexr text-center">
                 <th rowspan="2">Semaine</th>
                 <th rowspan="2">Date</th>
                 <th style="background-color:rgb(242, 242, 217);">Volume prévisionnel</th>
