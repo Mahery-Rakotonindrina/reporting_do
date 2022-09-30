@@ -1,6 +1,6 @@
 <div>
     <input type="hidden" id='route_insert_saisi' value="<?= route_to('insert_update_saisie') ?>" data-mod='edit-rep'>
-    <table class="table table-striped tableFixHead table-bordered table-responsive center text-center " id="table_saisi-edit" style="font-size:1em">
+    <table class="table table-striped table-bordered table-responsive center text-center " id="table_saisi-edit" style="font-size:1em">
     <thead>
             <tr>
                 <th colspan="2" rowspan="2"></th>

@@ -1,5 +1,5 @@
 <div>
-    <table class="table table-striped tableFixHead table-bordered table-responsive center text-center" id="Table_history" style="font-size:1.1em">
+    <table class="table table-striped table-bordered table-responsive center text-center" id="Table_history" style="font-size:1.1em">
         <thead>
             <tr class="center text-center">
                 <th>Date</th>
