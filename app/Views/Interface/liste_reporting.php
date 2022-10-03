@@ -64,7 +64,7 @@
                         <span class="fa fa-history"></span>
                     </button>&nbsp;
 
-                    <button type="button" class="btn btn-danger btn-delete " title="Supprimer parametrage" 
+                    <button type="button" class="btn btn-danger btn-delete " title="Supprimer paramétrage" 
                             data-id="<?= $param->rep_id_parameter?>"
                             data-route="<?= route_to("delete_param") ?>"
                             style="<?= $style ?>">

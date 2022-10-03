@@ -180,7 +180,7 @@ $(document).ready(function() {
                         success: (response) => {
                             var result = JSON.parse(response);
                             if (result.message == 'OK') {
-                                swal("Element supprimé avec succes", {
+                                swal("Elément supprimé avec succès", {
                                     icon: "success",
                                     buttons: 'Ok'
                                 });
