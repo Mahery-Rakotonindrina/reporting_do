@@ -209,7 +209,7 @@ Class ParametrageModel extends Model
     public function getAllParametrageForApi(){
         $sql = " SELECT * FROM ".$this->table." order by rep_id_parameter";
 
-        $query = $this->query($sql);
+        $query = $this->db->query($sql);
         return $query->getResult();
     }
 
@@ -220,7 +220,7 @@ Class ParametrageModel extends Model
                     inner join business_unit on business_unit.id_bu = gu_application.id_bu
                     where business_unit.id_bu in (3,4) order by id_application asc";
 
-        $query = $this->query($sql);
+        $query = $this->db->query($sql);
         return $query->getResult();
     }
 }

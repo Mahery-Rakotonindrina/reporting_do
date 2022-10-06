@@ -100,7 +100,7 @@ class SaisieModel extends Model
     public function getAllDataSaisie(){
         $sql = " SELECT * FROM ".$this->table." order by saisie_id_parameter, saisie_date";
 
-        $query = $this->query($sql);
+        $query = $this->db->query($sql);
         return $query->getResult();
     }
 
@@ -122,7 +122,7 @@ class SaisieModel extends Model
 
         $sql .= " ORDER BY saisie_date,nom_client"; 
 
-        $query = $this->query($sql);
+        $query = $this->db->query($sql);
         return $query->getResult();
     }
 

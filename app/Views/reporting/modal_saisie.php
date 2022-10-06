@@ -41,7 +41,7 @@
       <div class="modal-footer">
             <div class="row" style="padding:0px 10px 0px 10px;">
                 <div class="col-sm-12">
-                    <button type="button" class="btn btn-danger btn-sm btn-fermer_saisie" data-dismiss="modal"><span class="fa fa-times"></span>&nbsp;&nbsp;Fermer</button>
+                    <button type="button" class="btn btn-primary btn-sm btn-fermer_saisie" data-dismiss="modal"><span class="fa fa-check"></span>&nbsp;&nbsp;Valider</button>
                 </div>
             </div>
             </form>
