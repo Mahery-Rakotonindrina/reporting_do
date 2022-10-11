@@ -19,7 +19,7 @@
                             <div class="row form-group" id="form-group-profil-ajout">
                                 <label class="control-label col-sm-4">Client
                                     <span class="text-danger obligatoire">(*)</span>  :</label>
-                                <div class="col-sm-6" id="select_client">
+                                <div class="col-sm-7" id="select_client">
                                     <select name="client" class="form-control form-parameter field-profil" required>
                                         <option value="" disabled selected>Sélectionner un client</option>
                                     </select>
@@ -27,7 +27,7 @@
                             </div>
                         </div>
 
-                        <div class="col-sm-5">
+                        <div class="col-sm-6">
                             <div class="row form-group" id="form-group-profil-ajout">
                                 <label class="control-label col-sm-4"> <input type="checkbox" name="mail_check" id="mail_check">&nbsp;&nbsp;&nbsp;E-mail :</label>
                                 <div class="col-sm-7">
@@ -43,13 +43,13 @@
                             <div class="row form-group" id="form-group-profil-ajout">
                                 <label class="control-label col-sm-4">Code Commande
                                     <span class="text-danger obligatoire">(*)</span>  :</label>
-                                <div class="col-sm-6" id="select_code_commande">
+                                <div class="col-sm-7" id="select_code_commande">
                                     <select id="code_commande" name="code_commande" class="form-control form-parameter field-profil" disabled required>
                                     </select>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-sm-5">
+                        <div class="col-sm-6">
                             <div class="row form-group" id="form-group-profil-ajout">
                                 <label class="control-label col-sm-4">Projet
                                     <span class="text-danger obligatoire">(*)</span>  :</label>
@@ -67,13 +67,13 @@
                             <div class="row form-group" id="form-group-profil-ajout">
                                 <label class="control-label col-sm-4">Unité de volume
                                     <span class="text-danger obligatoire">(*)</span>  :</label>
-                                <div class="col-sm-6">
+                                <div class="col-sm-7">
                                     <input type="text" id="unite_volume" name="unite_volume" maxlength="50" class="form-control form-parameter field-profil" placeholder="" required>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="col-sm-5">
+                        <div class="col-sm-6">
                             <div class="row form-group" id="form-group-profil-ajout">
                                 <label class="control-label col-sm-4">Objectif cadence
                                     <span class="text-danger obligatoire">(*)</span>  :</label>
@@ -89,7 +89,7 @@
                             <div class="row form-group" id="form-group-profil-ajout">
                                 <label class="control-label col-sm-4">Taux d'occupation
                                     <span class="text-danger obligatoire">(*)</span>  :</label>
-                                <div class="col-sm-6">
+                                <div class="col-sm-7">
                                     <div class="input-group">
                                         <input id="taux_occupation" type="number" step=0.01 name="taux_occ" maxlength="50" class="form-control form-parameter field-profil" placeholder="" required>
                                         <div class="input-group-addon">
@@ -100,13 +100,13 @@
                             </div>
                         </div>
 
-                        <div class="col-sm-5">
+                        <div class="col-sm-6">
                             <div class="row form-group" id="form-group-profil-ajout">
                                 <label class="control-label col-sm-4">DMT
                                     <span class="text-danger obligatoire">(*)</span>  :</label>
                                 <div class="col-sm-7">
                                     <div class="input-group">
-                                        <input id="dmt" type="text" name="dmt" maxlength="50" class="form-control form-parameter field-profil" placeholder="" readonly>
+                                        <input id="dmt" type="text" name="dmt" maxlength="50" class="form-control form-parameter field-profil" placeholder="">
                                         <div class="input-group-addon">
                                         s
                                         </div>
@@ -121,13 +121,13 @@
                             <div class="row form-group" id="form-group-profil-ajout">
                                 <label class="control-label col-sm-4">Reliquat Initial
                                     <span class="text-danger obligatoire">(*)</span>  :</label>
-                                <div class="col-sm-6">
+                                <div class="col-sm-7">
                                     <input id="reliquat" type="number" name="rel_init" maxlength="50" class="form-control form-parameter field-profil" placeholder="" required>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="col-sm-5">
+                        <div class="col-sm-6">
                             <div class="row form-group" id="form-group-profil-ajout">
                                 <label class="control-label col-sm-4">Date d'application
                                     <span class="text-danger obligatoire">(*)</span>  :</label>
@@ -142,17 +142,41 @@
                         <div class="col-sm-6">
                             <div class="row form-group" id="form-group-profil-ajout">
                                 <label class="control-label col-sm-4"><input type="checkbox" name="obj_med_check" id="obj_med_check">&nbsp;&nbsp;&nbsp;Obj délai médian :</label>
-                                <div class="col-sm-6">
-                                    <input type="number" step=0.01 id="obj_del_median" name="obj_del_median" maxlength="50" class="form-control form-parameter field-profil" placeholder="" disabled>
+                                <div class="col-sm-7">
+                                    <input type="number" step=0.01 id="obj_del_median" name="obj_del_median" maxlength="50" class="form-control form-parameter field-profil col-sm-6" placeholder="" disabled>
+                                    <select class="form-control form-parameter field-profil col-sm-3" name="obj_med_unite_1" id="obj_med_unite_1" >
+                                        <option value="0">J</option>
+                                        <option value="1">H</option>
+                                    </select>
+                                    <select class="form-control form-parameter field-profil col-sm-3" name="obj_med_unite_2" id="obj_med_unite_2">
+                                        <option value="0">+0</option>
+                                        <option value="1">+1</option>
+                                        <option value="2">+2</option>
+                                        <option value="3">+3</option>
+                                        <option value="4">+4</option>
+                                        <option value="5">+5</option>
+                                    </select>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="col-sm-5">
+                        <div class="col-sm-6">
                             <div class="row form-group" id="form-group-profil-ajout">
                                 <label class="control-label col-sm-4"><input type="checkbox" name="obj_moy_check" id="obj_moy_check">&nbsp;&nbsp;&nbsp;Obj délai moyen :</label>
                                 <div class="col-sm-7">
-                                    <input type="number" step=0.01 id="obj_del_moyen" name="obj_del_moyen" maxlength="50" class="form-control form-parameter field-profil" placeholder="" disabled>
+                                    <input type="number" step=0.01 id="obj_del_moyen" name="obj_del_moyen" maxlength="50" class="form-control form-parameter field-profil col-sm-6" placeholder="" disabled>
+                                    <select class="form-control form-parameter field-profil col-sm-3" name="obj_moy_unite_1" id="obj_moy_unite_1">
+                                        <option value="0">J</option>
+                                        <option value="1">H</option>
+                                    </select>
+                                    <select class="form-control form-parameter field-profil col-sm-3" name="obj_moy_unite_2" id="obj_moy_unite_2">
+                                        <option value="0">+0</option>
+                                        <option value="1">+1</option>
+                                        <option value="2">+2</option>
+                                        <option value="3">+3</option>
+                                        <option value="4">+4</option>
+                                        <option value="5">+5</option>
+                                    </select>
                                 </div>
                             </div>
                         </div>
@@ -165,7 +189,7 @@
                             <div class="row form-group" id="form-group-profil-ajout">
                                 <label class="control-label col-sm-4">Taux de respect du délai 
                                     <span class="text-danger obligatoire">(*)</span>  :</label>
-                                <div class="col-sm-6">
+                                <div class="col-sm-7">
                                     <div class="input-group">
                                     <input type="number" step=0.01 id="t_resp_del" name="t_resp_del" maxlength="50" class="form-control form-parameter field-profil" placeholder="" required>
                                         <div class="input-group-addon">
@@ -176,7 +200,7 @@
                             </div>
                         </div>
 
-                        <div class="col-sm-5">
+                        <div class="col-sm-6">
                             <div class="row form-group" id="form-group-profil-ajout">
                                 <label class="control-label col-sm-4"><input type="checkbox" name="taux2_check" id="taux2_check">&nbsp;&nbsp;&nbsp;2ème Taux de respect du délai :</label>
                                 <div class="col-sm-7">
@@ -196,7 +220,7 @@
                             <div class="row form-group" id="form-group-profil-ajout">
                                 <label class="control-label col-sm-4">Taux de contrôle
                                     <span class="text-danger obligatoire">(*)</span>  :</label>
-                                <div class="col-sm-6">
+                                <div class="col-sm-7">
                                     <div class="input-group">
                                         <input type="number" step=0.01 id="t_ctrl" name="t_ctrl" maxlength="50" class="form-control form-parameter field-profil" placeholder="" required>
                                         <div class="input-group-addon">
@@ -207,7 +231,7 @@
                             </div>
                         </div>
 
-                        <div class="col-sm-5">   
+                        <div class="col-sm-6">   
                             <div class="row form-group" id="form-group-profil-ajout">
                                 <label class="control-label col-sm-4">Taux de conformité
                                     <span class="text-danger obligatoire">(*)</span>  :</label>

@@ -34,7 +34,7 @@
                     <a id="obj_cadence_show"></a>
                 </div>
                 <div class="row form-group">
-                    <label class="control-label col-sm-5">taux d'occupation :</label>
+                    <label class="control-label col-sm-5">Taux d'occupation :</label>
                     <a id="t_occupation_show"></a>
                 </div>
                 <div class="row form-group">

@@ -15,6 +15,7 @@
                   <option value="d">Egal à</option>
                   <option value="dd">Entre</option>
                   <option value="j" selected>Aujourd'hui</option>
+                  <option value="1j">Hier</option>
                   <option value="s">Cette semaine</option>
                   <option value="1s">La semaine dernière</option>
                   <option value="m">Ce mois-ci</option>

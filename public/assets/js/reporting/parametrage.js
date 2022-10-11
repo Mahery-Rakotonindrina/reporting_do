@@ -139,7 +139,7 @@ $(document).ready(function() {
         if(saisie != ""){
             swal({
                 title: "Attention",
-                text: "Vous êtes sur le point de modifier une paramètre qui contient déjà une ou plusieurs données",
+                text: "Vous êtes sur le point de modifier un paramètre qui contient déjà une ou plusieurs données",
                 icon: "warning",
                 buttons: ["Non", "Oui"],
             })
@@ -356,7 +356,7 @@ var calculDMT = () => {
 
     taux == '' || cadence == "" ?
         dmt = '' : 
-        dmt = 3600 * taux / cadence;
+        dmt = (3600 * taux / cadence)/100;
         
     dmt != '' ? 
         dmt = dmt.toFixed(2):
