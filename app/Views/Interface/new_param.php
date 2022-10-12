@@ -144,11 +144,11 @@
                                 <label class="control-label col-sm-4"><input type="checkbox" name="obj_med_check" id="obj_med_check">&nbsp;&nbsp;&nbsp;Obj délai médian :</label>
                                 <div class="col-sm-7">
                                     <input type="number" step=0.01 id="obj_del_median" name="obj_del_median" maxlength="50" class="form-control form-parameter field-profil col-sm-6" placeholder="" disabled>
-                                    <select class="form-control form-parameter field-profil col-sm-3" name="obj_med_unite_1" id="obj_med_unite_1" >
+                                    <select class="form-control form-parameter field-profil col-sm-3" name="obj_med_unite_1" id="obj_med_unite_1" disabled>
                                         <option value="0">J</option>
                                         <option value="1">H</option>
                                     </select>
-                                    <select class="form-control form-parameter field-profil col-sm-3" name="obj_med_unite_2" id="obj_med_unite_2">
+                                    <select class="form-control form-parameter field-profil col-sm-3" name="obj_med_unite_2" id="obj_med_unite_2" disabled>
                                         <option value="0">+0</option>
                                         <option value="1">+1</option>
                                         <option value="2">+2</option>
@@ -165,11 +165,11 @@
                                 <label class="control-label col-sm-4"><input type="checkbox" name="obj_moy_check" id="obj_moy_check">&nbsp;&nbsp;&nbsp;Obj délai moyen :</label>
                                 <div class="col-sm-7">
                                     <input type="number" step=0.01 id="obj_del_moyen" name="obj_del_moyen" maxlength="50" class="form-control form-parameter field-profil col-sm-6" placeholder="" disabled>
-                                    <select class="form-control form-parameter field-profil col-sm-3" name="obj_moy_unite_1" id="obj_moy_unite_1">
+                                    <select class="form-control form-parameter field-profil col-sm-3" name="obj_moy_unite_1" id="obj_moy_unite_1" disabled>
                                         <option value="0">J</option>
                                         <option value="1">H</option>
                                     </select>
-                                    <select class="form-control form-parameter field-profil col-sm-3" name="obj_moy_unite_2" id="obj_moy_unite_2">
+                                    <select class="form-control form-parameter field-profil col-sm-3" name="obj_moy_unite_2" id="obj_moy_unite_2" disabled>
                                         <option value="0">+0</option>
                                         <option value="1">+1</option>
                                         <option value="2">+2</option>

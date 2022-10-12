@@ -12,8 +12,12 @@ $(document).ready(function() {
     $(document).on('change', '#obj_med_check', function() {
         if ($(this).is(":checked")) {
             $('#obj_del_median').prop("disabled", false)
+            $('#obj_med_unite_1').prop("disabled", false)
+            $('#obj_med_unite_2').prop("disabled", false)
         } else {
             $('#obj_del_median').prop("disabled", true)
+            $('#obj_med_unite_1').prop("disabled", true)
+            $('#obj_med_unite_2').prop("disabled", true)
             $('#obj_del_median').val('')
         }
     })
@@ -21,8 +25,12 @@ $(document).ready(function() {
     $(document).on('change', '#obj_moy_check', function() {
         if ($(this).is(":checked")) {
             $('#obj_del_moyen').prop("disabled", false)
+            $('#obj_moy_unite_1').prop("disabled", false)
+            $('#obj_moy_unite_2').prop("disabled", false)
         } else {
             $('#obj_del_moyen').prop("disabled", true)
+            $('#obj_moy_unite_1').prop("disabled", true)
+            $('#obj_moy_unite_2').prop("disabled", true)
             $('#obj_del_moyen').val('')
         }
     })
@@ -200,11 +208,20 @@ $(document).ready(function() {
     })
 
     $(document).on('change', "#taux_occupation", function() {
-        calculDMT();
+        if($("#obj_cadence").val() != ""){
+            calculDMT();
+        }
+        if($("#dmt").val() != ''){
+            calculCadence();
+        }
     })
 
     $(document).on('change', "#obj_cadence", function() {
         calculDMT();
+    })
+
+    $(document).on('change', "#dmt", function(){
+        calculCadence();
     })
 
     $(document).on('click', ".btn-history", function() {
@@ -362,6 +379,24 @@ var calculDMT = () => {
         dmt = dmt.toFixed(2):
         dmt = '';
     $("#dmt").val(dmt);
+}
+
+var calculCadence = () => {
+    var dmt = $("#dmt").val();
+    var taux = $("#taux_occupation").val();
+    
+    taux == '' || dmt == '' ?
+        cadence = '':
+        cadence = (3600 * taux / dmt)/100;
+
+    cadence != '' ?
+        cadence = cadence.toFixed(2):
+        cadence = '';
+
+    console.log(taux);
+    console.log(dmt);
+    console.log(cadence);
+    $("#obj_cadence").val(cadence);
 }
 
 var getVisuParam = () => {
