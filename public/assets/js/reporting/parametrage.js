@@ -129,9 +129,9 @@ $(document).ready(function() {
                 $("#dmt_show").html(result.rep_dmt);
                 $("#reliquat_show").html(result.rep_reliquat_initial);
                 (result.rep_objectif_delai_median == null) ? $("#median_if").hide(): $("#median_if").show();
-                $("#obj_del_med_show").html(result.rep_objectif_delai_median);
+                $("#obj_del_med_show").html(result.rep_objectif_delai_median + ' ' +result.rep_obj_delai_median_unite);
                 (result.rep_objectif_delai_moyen == null) ? $("#moyen_if").hide(): $("#moyen_if").show();
-                $("#obj_del_moy_show").html(result.rep_objectif_delai_moyen);
+                $("#obj_del_moy_show").html(result.rep_objectif_delai_moyen  + ' ' +result.rep_obj_delai_moyen_unite);
                 $("#t_resp_del_show").html(result.rep_taux_respect_delai);
                 $("#t_resp_del_2_show").html(result.rep_taux_respect_delai_2);
                 $("#t_controle_show").html(result.rep_taux_controle);
@@ -529,21 +529,49 @@ var editParam = (btn) => {
             $("#date_app").val(date)
                 // $("#date_app").val(result.rep_date_creat)
             if (result.rep_objectif_delai_median != null) {
+                let unite_med = result.rep_obj_delai_median_unite;
+                let unites_meds = unite_med.split("+");
+
+                let unites_meds_1 = unites_meds[0].trim();
+                let unites_meds_2 = unites_meds[1].trim();
+
                 $("#obj_med_check").prop('checked', true)
-                $("#obj_del_median").val(result.rep_objectif_delai_median)
+                $("#obj_med_unite_1").prop('disabled', false)
+                $("#obj_med_unite_2").prop('disabled', false)
                 $("#obj_del_median").prop('disabled', false)
+                $("#obj_del_median").val(result.rep_objectif_delai_median)
+                $("#obj_med_unite_1").val(unites_meds_1)
+                $("#obj_med_unite_2").val(unites_meds_2)
             } else {
                 $("#obj_med_check").prop('checked', false)
                 $("#obj_del_median").val("")
                 $("#obj_del_median").prop('disabled', true)
+                $("#obj_med_unite_1").prop('disabled', true)
+                $("#obj_med_unite_2").prop('disabled', true)
+                $("#obj_med_unite_1").val('')
+                $("#obj_med_unite_2").val('')
             }
             if (result.rep_objectif_delai_moyen != null) {
+                let unite_moy = result.rep_obj_delai_moyen_unite;
+                let unites_moys = unite_moy.split("+");
+
+                let unites_moys_1 = unites_moys[0].trim();
+                let unites_moys_2 = unites_moys[1].trim();
+
                 $("#obj_moy_check").prop('checked', true)
                 $("#obj_del_moyen").prop('disabled', false)
+                $("#obj_moy_unite_1").prop('disabled', false)
+                $("#obj_moy_unite_2").prop('disabled', false)
                 $("#obj_del_moyen").val(result.rep_objectif_delai_moyen)
+                $("#obj_moy_unite_1").val(unites_moys_1)
+                $("#obj_moy_unite_2").val(unites_moys_2)
             } else {
                 $("#obj_moy_check").prop('checked', false)
                 $("#obj_del_moyen").prop('disabled', true)
+                $("#obj_moy_unite_1").prop('disabled', true)
+                $("#obj_moy_unite_2").prop('disabled', true)
+                $("#obj_moy_unite_1").val('')
+                $("#obj_moy_unite_2").val('')
                 $("#obj_del_moyen").val('')
             }
 

@@ -53,7 +53,12 @@ Class Parametrage extends BaseController
  
         $graphe = ($this->request->getPost('graphe') != null)? true : false;
         $req =$this->request->getpost('rep_status');
+        $med_unite_1 = $this->request->getPost('obj_med_unite_1');
+        $med_unite_2 = ($this->request->getPost('obj_med_unite_2') != '' && $this->request->getPost('obj_med_unite_2') != 0) ? ' + '.$this->request->getPost('obj_med_unite_2') : '';
 
+        $moy_unite_1 = $this->request->getPost('obj_moy_unite_1');
+        $moy_unite_2 = ($this->request->getPost('obj_moy_unite_2') != '' && $this->request->getPost('obj_moy_unite_2') != 0) ? ' + '.$this->request->getPost('obj_moy_unite_2') : '';
+        
         $donnees = array(
             'rep_id_client' =>  $this->request->getpost('client'),
             'rep_id_projet' => $this->request->getpost('projet'),
@@ -67,7 +72,9 @@ Class Parametrage extends BaseController
             'rep_dmt' => $this->request->getpost('dmt'),
             'rep_reliquat_initial' => $this->request->getpost('rel_init'),
             'rep_objectif_delai_median' =>($this->request->getpost('obj_del_median')) !== null ? $this->request->getpost('obj_del_median') : null,
+            'rep_obj_delai_median_unite' => $med_unite_1 != null ? $med_unite_1.' '.$med_unite_2 : '',
             'rep_objectif_delai_moyen' =>($this->request->getpost('obj_del_moyen')) !== null ? $this->request->getpost('obj_del_moyen') : null,
+            'rep_obj_delai_moyen_unite' => $moy_unite_1 != null ? $moy_unite_1.' '.$moy_unite_2 : '',
             'rep_taux_respect_delai' => $this->request->getpost('t_resp_del'),
             'rep_taux_respect_delai_2' => $this->request->getpost('t_resp_del2'),
             'rep_taux_controle' => $this->request->getpost('t_ctrl'),
@@ -80,7 +87,6 @@ Class Parametrage extends BaseController
         }catch(\Exception $e){
             return $e->getMessage();
         }
-
         if($param != ''){
             $retour = array(
                 'message' => 'OK',
@@ -110,6 +116,12 @@ Class Parametrage extends BaseController
             $id_parent = $id :
             $id_parent = $old_param[0]->rep_id_parent;
  
+        $med_unite_1 = $this->request->getPost('obj_med_unite_1');
+        $med_unite_2 = ($this->request->getPost('obj_med_unite_2') != '' && $this->request->getPost('obj_med_unite_2') != 0) ? ' + '.$this->request->getPost('obj_med_unite_2') : '';
+
+        $moy_unite_1 = $this->request->getPost('obj_moy_unite_1');
+        $moy_unite_2 = ($this->request->getPost('obj_moy_unite_2') != '' && $this->request->getPost('obj_moy_unite_2') != 0) ? ' + '.$this->request->getPost('obj_moy_unite_2') : '';
+            
         $graphe = ($this->request->getPost('graphe') != null)? true : false;
         $donnees = array(
             'rep_id_client' =>  $this->request->getpost('client'),
@@ -124,7 +136,9 @@ Class Parametrage extends BaseController
             'rep_dmt' => $this->request->getpost('dmt'),
             'rep_reliquat_initial' => $this->request->getpost('rel_init'),
             'rep_objectif_delai_median' =>($this->request->getpost('obj_del_median')) !== null ? $this->request->getpost('obj_del_median') : null,
+            'rep_obj_delai_median_unite' => $med_unite_1 != null ? $med_unite_1.' '.$med_unite_2 : '',
             'rep_objectif_delai_moyen' =>($this->request->getpost('obj_del_moyen')) !== null ? $this->request->getpost('obj_del_moyen') : null,
+            'rep_obj_delai_moyen_unite' => $moy_unite_1 != null ? $moy_unite_1.' '.$moy_unite_2 : '',
             'rep_taux_respect_delai' => $this->request->getpost('t_resp_del'),
             'rep_taux_respect_delai_2' => $this->request->getpost('t_resp_del2'),
             'rep_taux_controle' => $this->request->getpost('t_ctrl'),
