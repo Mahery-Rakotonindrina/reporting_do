@@ -54,12 +54,12 @@
                     <a id="obj_del_moy_show"></a>
                 </div>
                 <div class="row form-group">
-                    <label class="control-label col-sm-5">Taux respect délai :</label>
-                    <a id="t_resp_del_show"></a>
+                    <label class="control-label col-sm-5">Objectif de délai :</label>
+                    <a id="obj_delai_1_show"></a>
                 </div>
                 <div class="row form-group">
-                    <label class="control-label col-sm-5">2ème Taux respect délai :</label>
-                    <a id="t_resp_del_2_show"></a>
+                    <label class="control-label col-sm-5">2ème Objectif de délai :</label>
+                    <a id="obj_delai_2_show"></a>
                 </div>
                 <div class="row form-group">
                     <label class="control-label col-sm-5">Taux contrôle :</label>
@@ -68,10 +68,6 @@
                 <div class="row form-group">
                     <label class="control-label col-sm-5">Taux Conformité :</label>
                     <a id="t_conformite_show"></a>
-                </div>
-                <div class="row form-group">
-                    <label class="control-label col-sm-5">Graphe :</label>
-                    <a id="rep_graphe_show"></a>
                 </div>
             </div>
             <div class="modal-footer">

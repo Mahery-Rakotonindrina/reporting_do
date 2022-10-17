@@ -20,7 +20,7 @@ Class ParametrageModel extends Model
                         FROM gu_application
                     inner join gu_client on gu_client.id_client = gu_application.id_client
                     inner join business_unit on business_unit.id_bu = gu_application.id_bu
-                    where business_unit.id_bu in (3,4))data_client
+                    )data_client
                     order by nom_client asc';
             
          $query = $this->db->query($sql);  
@@ -32,7 +32,7 @@ Class ParametrageModel extends Model
                     FROM gu_application
                 inner join gu_client on gu_client.id_client = gu_application.id_client
                 inner join business_unit on business_unit.id_bu = gu_application.id_bu
-                where business_unit.id_bu in (3,4) and gu_client.id_client ='.$id_client;
+                where gu_client.id_client ='.$id_client;
         
         if($code != null){
             $sql .= "and code ='".$code."'";
@@ -47,7 +47,7 @@ Class ParametrageModel extends Model
                     FROM gu_application
                 inner join gu_client on gu_client.id_client = gu_application.id_client
                 inner join business_unit on business_unit.id_bu = gu_application.id_bu
-                where business_unit.id_bu in (3,4) and gu_client.id_client ='.$id_client;
+                where gu_client.id_client ='.$id_client;
         
         $query = $this->db->query($sql);  
         return $query->getResult();
@@ -93,11 +93,11 @@ Class ParametrageModel extends Model
                         rep_dmt, 
                         rep_reliquat_initial, 
                         rep_objectif_delai_median, 
-                        rep_obj_delai_median_unite,
-                        rep_objectif_delai_moyen, 
-                        rep_obj_delai_moyen_unite,
-                        rep_taux_respect_delai, 
-                        rep_taux_respect_delai_2, 
+                        rep_objectif_delai_moyen,
+                        rep_objectif_delai_1, 
+                        rep_objectif_delai_2,
+                        rep_obj_delai_unite_1,
+                        rep_obj_delai_unite_2,
                         rep_taux_controle, 
                         rep_taux_conformite, 
                         CASE WHEN rep_graphe = false THEN 'Non' ELSE 'Oui' END as rep_graphe,
@@ -145,8 +145,10 @@ Class ParametrageModel extends Model
                         rep_date_fin_application,
                         rep_objectif_delai_median, 
                         rep_objectif_delai_moyen, 
-                        rep_taux_respect_delai, 
-                        rep_taux_respect_delai_2,
+                        rep_objectif_delai_1, 
+                        rep_objectif_delai_2, 
+                        rep_obj_delai_unite_1,
+                        rep_obj_delai_unite_2,
                         rep_taux_controle,
                         rep_taux_conformite, 
                         rep_graphe
@@ -220,7 +222,7 @@ Class ParametrageModel extends Model
                     FROM gu_application
                     inner join gu_client on gu_client.id_client = gu_application.id_client
                     inner join business_unit on business_unit.id_bu = gu_application.id_bu
-                    where business_unit.id_bu in (3,4) order by id_application asc";
+                    order by id_application asc";
 
         $query = $this->db->query($sql);
         return $query->getResult();

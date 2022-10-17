@@ -78,7 +78,12 @@
                                 <label class="control-label col-sm-4">Objectif cadence
                                     <span class="text-danger obligatoire">(*)</span>  :</label>
                                 <div class="col-sm-7">
-                                    <input type="number" step=0.01 id="obj_cadence" name="obj_cadence" maxlength="50" class="form-control form-parameter field-profil" placeholder="" required>
+                                    <div class="input-group">
+                                        <input type="number" step=0.5 id="obj_cadence" name="obj_cadence" maxlength="50" class="form-control form-parameter field-profil" placeholder="" required>
+                                        <div class="input-group-addon">
+                                        /h
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -143,19 +148,7 @@
                             <div class="row form-group" id="form-group-profil-ajout">
                                 <label class="control-label col-sm-4"><input type="checkbox" name="obj_med_check" id="obj_med_check">&nbsp;&nbsp;&nbsp;Obj délai médian :</label>
                                 <div class="col-sm-7">
-                                    <input type="number" step=0.01 id="obj_del_median" name="obj_del_median" maxlength="50" class="form-control form-parameter field-profil col-sm-6" placeholder="" disabled>
-                                    <select class="form-control form-parameter field-profil col-sm-3" name="obj_med_unite_1" id="obj_med_unite_1" disabled>
-                                        <option value="J">J</option>
-                                        <option value="H">H</option>
-                                    </select>
-                                    <select class="form-control form-parameter field-profil col-sm-3" name="obj_med_unite_2" id="obj_med_unite_2" disabled>
-                                        <option value="0">+0</option>
-                                        <option value="1">+1</option>
-                                        <option value="2">+2</option>
-                                        <option value="3">+3</option>
-                                        <option value="4">+4</option>
-                                        <option value="5">+5</option>
-                                    </select>
+                                    <input type="number" step=0.01 id="obj_del_median" name="obj_del_median" maxlength="50" class="form-control form-parameter field-profil" placeholder="" disabled>
                                 </div>
                             </div>
                         </div>
@@ -164,27 +157,69 @@
                             <div class="row form-group" id="form-group-profil-ajout">
                                 <label class="control-label col-sm-4"><input type="checkbox" name="obj_moy_check" id="obj_moy_check">&nbsp;&nbsp;&nbsp;Obj délai moyen :</label>
                                 <div class="col-sm-7">
-                                    <input type="number" step=0.01 id="obj_del_moyen" name="obj_del_moyen" maxlength="50" class="form-control form-parameter field-profil col-sm-6" placeholder="" disabled>
-                                    <select class="form-control form-parameter field-profil col-sm-3" name="obj_moy_unite_1" id="obj_moy_unite_1" disabled>
-                                        <option value="J">J</option>
-                                        <option value="H">H</option>
-                                    </select>
-                                    <select class="form-control form-parameter field-profil col-sm-3" name="obj_moy_unite_2" id="obj_moy_unite_2" disabled>
-                                        <option value="0">+0</option>
-                                        <option value="1">+1</option>
-                                        <option value="2">+2</option>
-                                        <option value="3">+3</option>
-                                        <option value="4">+4</option>
-                                        <option value="5">+5</option>
-                                    </select>
+                                    <input type="number" step=0.01 id="obj_del_moyen" name="obj_del_moyen" maxlength="50" class="form-control form-parameter field-profil" placeholder="" disabled>
                                 </div>
                             </div>
                         </div>
                         
                     </div>
                     
-
                     <div class="row">
+                        <div class="col-sm-6">
+                            <div class="row form-group" id="form-group-profil-ajout">
+                                <label class="control-label col-sm-4">Objectif de délai 
+                                <span class="text-danger obligatoire">(*)</span>  :</label>
+                                <div class="col-sm-7">
+                                    <div class="form-row row" style="margin-left:0px ;">
+                                        <div class="input-group col-sm-5">
+                                            <input type="number" step=0.5 id="obj_delai_1" name="obj_delai_1" maxlength="50" class="form-control form-parameter field-profil" placeholder="" required>
+                                            <div class="input-group-addon">
+                                                %
+                                            </div>
+                                        </div>&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <select class="col-sm-3 form-control" id="obj_del_inite_1_1" name="obj_del_inite_1_1">
+                                            <option value="J" selected>J</option>
+                                            <option value="H">H</option>
+                                        </select>
+                                        <select class="col-sm-3 form-control" id="obj_del_inite_1_2" name="obj_del_inite_1_2">
+                                            <?php for($i=0; $i<=24; $i++){?>
+                                                <option value="<?= $i ?>" <?= ($i == 0) ? 'selected' : ''?>><?= '+'.$i?></option>
+                                            <?php }?>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-6">
+                            <div class="row form-group" id="form-group-profil-ajout">
+                                <label class="control-label col-sm-4">2ème Objectif de délai 
+                                <span class="text-danger obligatoire">(*)</span>  :</label>
+                                <div class="col-sm-7">
+                                    <div class="form-row row" style="margin-left:0px ;">
+                                        <div class="input-group col-sm-5">
+                                            <input type="number" step=0.5 id="obj_delai_2" name="obj_delai_2" maxlength="50" class="form-control form-parameter field-profil" placeholder="" required>
+                                            <div class="input-group-addon">
+                                                %
+                                            </div>
+                                            <!-- <input class="form-control" type="text"  placeholder="City"> -->
+                                        </div>&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <select class="col-sm-3 form-control" id="obj_del_inite_2_1" name="obj_del_inite_2_1">
+                                            <option value="J" selected>J</option>
+                                            <option value="H">H</option>
+                                        </select>
+                                        <select class="col-sm-3 form-control" id="obj_del_inite_2_2" name="obj_del_inite_2_2">
+                                            <?php for($i=0; $i<=24; $i++){?>
+                                                <option value="<?= $i ?>" <?= ($i == 1) ? 'selected' : ''?>><?= '+'.$i?></option>
+                                            <?php }?>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- <div class="row">
                         <div class="col-sm-6">
                             <div class="row form-group" id="form-group-profil-ajout">
                                 <label class="control-label col-sm-4">Taux de respect du délai 
@@ -213,12 +248,12 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                     
                     <div class="row">
                         <div class="col-sm-6">
                             <div class="row form-group" id="form-group-profil-ajout">
-                                <label class="control-label col-sm-4">Taux de contrôle
+                                <label class="control-label col-sm-4" title="Taux d'échantionnage">Taux de contrôle
                                     <span class="text-danger obligatoire">(*)</span>  :</label>
                                 <div class="col-sm-7">
                                     <div class="input-group">
@@ -233,7 +268,7 @@
 
                         <div class="col-sm-6">   
                             <div class="row form-group" id="form-group-profil-ajout">
-                                <label class="control-label col-sm-4">Taux de conformité
+                                <label class="control-label col-sm-4" title="Taux qualité">Taux de conformité
                                     <span class="text-danger obligatoire">(*)</span>  :</label>
                                 <div class="col-sm-7">
                                     <div class="input-group">

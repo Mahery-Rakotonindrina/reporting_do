@@ -15,8 +15,8 @@
                 <th>Reliquat initial</th>
                 <th>Objectif delai median</th>
                 <th>Objectif delai moyen</th>
-                <th>Taux de respect du délai</th>
-                <th>2ème Taux de respect du délai</th>
+                <th>Objectif de delai</th>
+                <th>2ème Objectif de delai</th>
                 <th>Taux de contrôle</th>
                 <th>Taux de conformité</th>
                 <th>Début application</th>
@@ -42,8 +42,8 @@
                     <td><?= $param->rep_reliquat_initial?></td>
                     <td><?= $param->rep_objectif_delai_median?></td>
                     <td><?= $param->rep_objectif_delai_moyen?></td>
-                    <td><?= $param->rep_taux_respect_delai?></td>
-                    <td><?= $param->rep_taux_respect_delai_2?></td>
+                    <td><?= $param->rep_objectif_delai_1 ?></td>
+                    <td><?= $param->rep_objectif_delai_2 ?></td>
                     <td><?= $param->rep_taux_controle?></td>
                     <td><?= $param->rep_taux_conformite?></td>
                     <td><?= $param->rep_date_debut_application?></td>

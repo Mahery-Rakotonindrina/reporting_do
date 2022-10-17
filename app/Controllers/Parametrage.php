@@ -53,11 +53,11 @@ Class Parametrage extends BaseController
  
         $graphe = ($this->request->getPost('graphe') != null)? true : false;
         $req =$this->request->getpost('rep_status');
-        $med_unite_1 = $this->request->getPost('obj_med_unite_1');
-        $med_unite_2 = ($this->request->getPost('obj_med_unite_2') != '' && $this->request->getPost('obj_med_unite_2') != 0) ? ' + '.$this->request->getPost('obj_med_unite_2') : '';
+        $del_unite_1_1 = $this->request->getPost('obj_del_inite_1_1');
+        $del_unite_1_2 = ($this->request->getPost('obj_del_inite_1_2') != '' && $this->request->getPost('obj_del_inite_1_2') != 0) ? ' + '.$this->request->getPost('obj_del_inite_1_2') : '';
 
-        $moy_unite_1 = $this->request->getPost('obj_moy_unite_1');
-        $moy_unite_2 = ($this->request->getPost('obj_moy_unite_2') != '' && $this->request->getPost('obj_moy_unite_2') != 0) ? ' + '.$this->request->getPost('obj_moy_unite_2') : '';
+        $del_unite_2_1 = $this->request->getPost('obj_del_inite_2_1');
+        $del_unite_2_2 = ($this->request->getPost('obj_del_inite_2_2') != '' && $this->request->getPost('obj_del_inite_2_2') != 0) ? ' + '.$this->request->getPost('obj_del_inite_2_2') : '';
         
         $donnees = array(
             'rep_id_client' =>  $this->request->getpost('client'),
@@ -72,11 +72,13 @@ Class Parametrage extends BaseController
             'rep_dmt' => $this->request->getpost('dmt'),
             'rep_reliquat_initial' => $this->request->getpost('rel_init'),
             'rep_objectif_delai_median' =>($this->request->getpost('obj_del_median')) !== null ? $this->request->getpost('obj_del_median') : null,
-            'rep_obj_delai_median_unite' => $med_unite_1 != null ? $med_unite_1.' '.$med_unite_2 : '',
             'rep_objectif_delai_moyen' =>($this->request->getpost('obj_del_moyen')) !== null ? $this->request->getpost('obj_del_moyen') : null,
-            'rep_obj_delai_moyen_unite' => $moy_unite_1 != null ? $moy_unite_1.' '.$moy_unite_2 : '',
-            'rep_taux_respect_delai' => $this->request->getpost('t_resp_del'),
-            'rep_taux_respect_delai_2' => $this->request->getpost('t_resp_del2'),
+            // 'rep_taux_respect_delai' => $this->request->getpost('t_resp_del'),
+            // 'rep_taux_respect_delai_2' => $this->request->getpost('t_resp_del2'),
+            'rep_objectif_delai_1' => $this->request->getPost('obj_delai_1'),
+            'rep_obj_delai_unite_1' => $del_unite_1_1.$del_unite_1_2,
+            'rep_objectif_delai_2' => $this->request->getPost('obj_delai_2'),
+            'rep_obj_delai_unite_2' => $del_unite_2_1.$del_unite_2_2,
             'rep_taux_controle' => $this->request->getpost('t_ctrl'),
             'rep_taux_conformite' => $this->request->getpost('t_cnft'),
             'rep_graphe' => $graphe
@@ -115,12 +117,12 @@ Class Parametrage extends BaseController
         $old_param[0]->rep_id_parent == -1 ?
             $id_parent = $id :
             $id_parent = $old_param[0]->rep_id_parent;
- 
-        $med_unite_1 = $this->request->getPost('obj_med_unite_1');
-        $med_unite_2 = ($this->request->getPost('obj_med_unite_2') != '' && $this->request->getPost('obj_med_unite_2') != 0) ? ' + '.$this->request->getPost('obj_med_unite_2') : '';
 
-        $moy_unite_1 = $this->request->getPost('obj_moy_unite_1');
-        $moy_unite_2 = ($this->request->getPost('obj_moy_unite_2') != '' && $this->request->getPost('obj_moy_unite_2') != 0) ? ' + '.$this->request->getPost('obj_moy_unite_2') : '';
+        $del_unite_1_1 = $this->request->getPost('obj_del_inite_1_1');
+        $del_unite_1_2 = ($this->request->getPost('obj_del_inite_1_2') != '' && $this->request->getPost('obj_del_inite_1_2') != 0) ? ' + '.$this->request->getPost('obj_del_inite_1_2') : '';
+
+        $del_unite_2_1 = $this->request->getPost('obj_del_inite_2_1');
+        $del_unite_2_2 = ($this->request->getPost('obj_del_inite_2_2') != '' && $this->request->getPost('obj_del_inite_2_2') != 0) ? ' + '.$this->request->getPost('obj_del_inite_2_2') : '';
             
         $graphe = ($this->request->getPost('graphe') != null)? true : false;
         $donnees = array(
@@ -136,11 +138,11 @@ Class Parametrage extends BaseController
             'rep_dmt' => $this->request->getpost('dmt'),
             'rep_reliquat_initial' => $this->request->getpost('rel_init'),
             'rep_objectif_delai_median' =>($this->request->getpost('obj_del_median')) !== null ? $this->request->getpost('obj_del_median') : null,
-            'rep_obj_delai_median_unite' => $med_unite_1 != null ? $med_unite_1.' '.$med_unite_2 : '',
             'rep_objectif_delai_moyen' =>($this->request->getpost('obj_del_moyen')) !== null ? $this->request->getpost('obj_del_moyen') : null,
-            'rep_obj_delai_moyen_unite' => $moy_unite_1 != null ? $moy_unite_1.' '.$moy_unite_2 : '',
-            'rep_taux_respect_delai' => $this->request->getpost('t_resp_del'),
-            'rep_taux_respect_delai_2' => $this->request->getpost('t_resp_del2'),
+            'rep_objectif_delai_1' => $this->request->getPost('obj_delai_1'),
+            'rep_obj_delai_unite_1' => $del_unite_1_1.$del_unite_1_2,
+            'rep_objectif_delai_2' => $this->request->getPost('obj_delai_2'),
+            'rep_obj_delai_unite_2' => $del_unite_2_1.$del_unite_2_2,
             'rep_taux_controle' => $this->request->getpost('t_ctrl'),
             'rep_taux_conformite' => $this->request->getpost('t_cnft'),
             'rep_graphe' => $graphe,
@@ -189,8 +191,10 @@ Class Parametrage extends BaseController
             'rep_reliquat_initial' => $old_param[0]->rep_reliquat_initial,
             'rep_objectif_delai_median' => $old_param[0]->rep_objectif_delai_median,
             'rep_objectif_delai_moyen' => $old_param[0]->rep_objectif_delai_moyen,
-            'rep_taux_respect_delai' => $old_param[0]->rep_taux_respect_delai,
-            'rep_taux_respect_delai_2' => $old_param[0]->rep_taux_respect_delai_2,
+            'rep_objectif_delai_1' => $old_param[0]->rep_objectif_delai_1,
+            'rep_obj_delai_unite_1' => $old_param[0]->rep_obj_delai_unite_1,
+            'rep_objectif_delai_2' => $old_param[0]->rep_objectif_delai_2,
+            'rep_obj_delai_unite_2' => $old_param[0]->rep_obj_delai_unite_2,
             'rep_taux_controle' => $old_param[0]->rep_taux_controle,
             'rep_taux_conformite' => $old_param[0]->rep_taux_conformite,
             'rep_graphe' => $old_param[0]->rep_graphe == 'Oui' ? true : false,
