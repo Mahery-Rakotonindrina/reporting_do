@@ -1,15 +1,32 @@
+<?php 
+$del_median = $params[0]->rep_objectif_delai_median;
+$del_moyen = $params[0]->rep_objectif_delai_moyen;
+
+if($del_median != null && $del_moyen != null){
+    $colspan = 8;
+    $cloClient = 20;
+}else if($del_median != null || $del_moyen !=null){
+    $colspan = 7;
+    $cloClient = 19;
+}else{
+    $colspan = 5;
+    $cloClient = 17;
+}
+// var_dump($params[0]);die;
+
+?>
 <div>
     <input type="hidden" id='route_insert_saisi' value="<?= route_to('insert_update_saisie') ?>" data-mod='edit-rep'>
     <table class="table table-striped table-bordered table-responsive center text-center " id="table_saisi-edit" style="font-size:1em">
     <thead>
             <tr>
                 <th colspan="2" rowspan="2"></th>
-                <th colspan="17"><?= $params[0]->nom_client?></th>
+                <th colspan="<?= $cloClient ?>"><?= $params[0]->nom_client?></th>
             </tr>
             <tr>
                 <th colspan="5">KPI Prévision</th>
                 <th colspan="7">KPI Performance interne</th>
-                <th colspan="5">KPI Engagement Client</th>
+                <th colspan="<?= $colspan ?>">KPI Engagement Client</th>
             </tr>
             <tr class="centexr text-center">
                 <th rowspan="2">Semaine</th>
@@ -26,6 +43,15 @@
                 <th style="background-color:rgb(242, 242, 217);" rowspan="2">HPROD</th>
                 <th >Cadence</th>
                 <th rowspan="2">Taux de performance de production</th>
+                <?php if($del_median != null) { ?>
+                    <th>Délai Median de Traitement</th>
+                <?php } ?>
+                <?php if($del_moyen != null) { ?>
+                    <th>Délai Moyen de Traitement</th>
+                <?php } ?>
+                <?php if($del_median != null || $del_moyen != null) { ?>
+                    <th>Délai</th>
+                <?php } ?>
                 <th >Taux de respect <br>de Délai de livraison</th>
                 <th >Volume à contrôler</th>
                 <th colspan="3">Objectif de conformité: <?= number_format($params[0]->rep_taux_conformite,2,',','')?>%</th>
@@ -38,7 +64,16 @@
                 <th><?= $params[0]->rep_unite?></th>
                 <th style="background-color: rgb(217, 217, 217);"><?= $params[0]->rep_reliquat_initial?></th>
                 <th><?= $params[0]->rep_objectif_cadence?></th>
-                <th><?= $params[0]->rep_taux_respect_delai?>% à J</th>
+                <?php if($del_median != null) { ?>
+                    <th>0.5</th>
+                <?php } ?>
+                <?php if($del_moyen != null) { ?>
+                    <th>1</th>
+                <?php } ?>
+                <?php if($del_median != null || $del_moyen != null) { ?>
+                    <th>1</th>
+                <?php } ?>
+                <th><?= $params[0]->rep_objectif_delai_1 ?>% à <?= $params[0]->rep_obj_delai_unite_1 ?></th>
                 <th><?= $params[0]->rep_taux_controle?></th>
                 <th style="background-color:rgb(242, 242, 217);">Volume contrôlés</th>
                 <th style="background-color:rgb(242, 242, 217);">Volume KO</th>
@@ -134,6 +169,15 @@
                                value="<?= $resultat->saisie_taux_performance_prod != null ? number_format($resultat->saisie_taux_performance_prod,0,',','') : '' ?>" 
                                readonly>
                     </td>
+                    <?php if($del_median != null) { ?>
+                        <td><input type="text" class="form-control"></td>
+                    <?php } ?>
+                    <?php if($del_moyen != null) { ?>
+                        <td><input type="text" class="form-control"></td>
+                    <?php } ?>
+                    <?php if($del_median != null || $del_moyen != null) { ?>
+                        <td><input type="text" class="form-control"></td>
+                    <?php } ?>
                     <td>
                         <input type="text" 
                                class="form-control form-input" 

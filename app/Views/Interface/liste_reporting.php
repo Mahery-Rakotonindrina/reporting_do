@@ -29,42 +29,48 @@
                 <td><?= $param->nom_client?></td>
                 <td><?= $param->nom_application?></td>
                 <td style="text-align: left;">
-                <div class="col-sm-4"></div>
-                <div class="col-sm-7">
-                    <button type="button" id="btn_interface_saisie" class="btn btn-primary btn_interface_saisie" title="Saisir les données"  
+                <div class="col-sm-3"></div>
+                <div class="col-sm-8">
+                    <button type="button" id="btn_interface_saisie" class="btn btn-sm btn-info btn_interface_saisie" title="Saisir les données"  
+                            data-toggle="modal" data-target="#modal_saisie" 
+                            data-id="<?= $param->rep_id_parameter?>">
+                        <span class="fa fa-layer-group"></span>
+                    </button>&nbsp;
+
+                    <button type="button" id="btn_interface_saisie" class="btn btn-sm btn-primary btn_interface_saisie" title="Saisir les données"  
                             data-toggle="modal" data-target="#modal_saisie" 
                             data-id="<?= $param->rep_id_parameter?>">
                         <span class="fa fa-pencil"></span>
                     </button>&nbsp;
 
-                    <button type="button" class="btn btn-warning btn-edit-reporting" title="Editer les données" 
+                    <button type="button" class="btn btn-warning btn-edit-reporting btn-sm" title="Editer les données" 
                             data-toggle="modal" data-target="#modal_edit_reporting" 
                             data-id="<?= $param->rep_id_parameter?>">
                         <span class="fa fa-edit"></span>
                     </button>&nbsp;
 
-                    <button type="button" id="btn_show_param" class="btn btn-info" title="Voir le paramètre" 
+                    <button type="button" id="btn_show_param" class="btn btn-info btn-sm" title="Voir le paramètre" 
                             data-toggle="modal" data-target="#modal_show_param" 
                             data-id="<?= $param->rep_id_parameter?>"
                             data-route="<?= route_to("show_param")?>">
                         <span class="fa fa-eye"></span>
                     </button>&nbsp;
 
-                    <button type="button" id="btn_edit_param" class="btn btn-success" title="Editer le paramètre"  
+                    <button type="button" id="btn_edit_param" class="btn btn-success btn-sm" title="Editer le paramètre"  
                             data-id="<?= $param->rep_id_parameter?>"
                             data-saisie = "<?= $saisie ?>"
                             data-route="<?= route_to("show_param")?>">
                         <span class="fa fa-highlighter"></span>
                     </button>&nbsp;
 
-                    <button type="button" class="btn btn-secondary btn-history" title="Voir l'historique du paramètre" 
+                    <button type="button" class="btn btn-secondary btn-history btn-sm" title="Voir l'historique du paramètre" 
                             data-toggle="modal" data-target="#modal_show_history" 
                             data-id="<?= $param->rep_id_parameter?>"
                             data-route="<?= route_to("param_history")?>">
                         <span class="fa fa-history"></span>
                     </button>&nbsp;
 
-                    <button type="button" class="btn btn-danger btn-delete " title="Supprimer paramétrage" 
+                    <button type="button" class="btn btn-danger btn-delete btn-sm" title="Supprimer paramétrage" 
                             data-id="<?= $param->rep_id_parameter?>"
                             data-route="<?= route_to("delete_param") ?>"
                             style="<?= $style ?>">

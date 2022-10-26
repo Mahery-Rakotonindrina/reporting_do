@@ -175,12 +175,11 @@ class Saisie extends BaseController
             $date_fin= $this->request->getpost('date_2') :
             $date_fin = ''
             ;
-        
         $id_param = $this->request->getpost('id_param');
+
         $param = $this->reporting->getParamById($id_param);
         $sql_where = date_sql($chx_date, $date_debut, $date_fin);
         $resultat = $this->saisie->getsaisibydate($sql_where, $id_param);
-
         $this->data['params'] = $param;
         $this->data['resultats'] = $resultat;
         return view('/reporting/table_edit_saisie', $this->data);

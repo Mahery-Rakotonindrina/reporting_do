@@ -21,7 +21,7 @@
                 <th>Taux de conformité</th>
                 <th>Début application</th>
                 <th>Fin Application</th>
-                <th>Graphe</th>
+                <!-- <th>Graphe</th> -->
                 <th>Statut</th>
             </tr>
         </thead>
@@ -42,15 +42,15 @@
                     <td><?= $param->rep_reliquat_initial?></td>
                     <td><?= $param->rep_objectif_delai_median?></td>
                     <td><?= $param->rep_objectif_delai_moyen?></td>
-                    <td><?= $param->rep_objectif_delai_1 ?></td>
-                    <td><?= $param->rep_objectif_delai_2 ?></td>
+                    <td><?= $param->rep_objectif_delai_1 ?> % à <?= $param->rep_obj_delai_unite_1 ?></td>
+                    <td><?= $param->rep_objectif_delai_2 ?> % à <?= $param->rep_obj_delai_unite_2 ?></td>
                     <td><?= $param->rep_taux_controle?></td>
                     <td><?= $param->rep_taux_conformite?></td>
                     <td><?= $param->rep_date_debut_application?></td>
                     <td><?= $param->rep_date_fin_application?></td>
-                    <td><?= $param->rep_graphe == true ?
+                    <!-- <td><?= $param->rep_graphe == true ?
                         '<span class="fa fa-check" style="color:green;font-size:1.8em" title="Oui"></span>' : 
-                        '<span class="fa fa-xmark" style="color:red;font-size:1.8em" title="Non"></span>'; ?></td>
+                        '<span class="fa fa-xmark" style="color:red;font-size:1.8em" title="Non"></span>'; ?></td> -->
                     <td><?= $param->statut == 1 ?
                             '<span class="fa fa-check" style="color:green;font-size:1.8em" title="actif"></span>' : 
                             '<span class="fa fa-xmark" style="color:red;font-size:1.8em" title="inactif"></span>'; ?></td>

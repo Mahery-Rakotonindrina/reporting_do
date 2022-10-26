@@ -475,6 +475,11 @@ var resetForm = () => {
     $("#projet").val('')
     $("#code_commande").prop('disabled', true)
     $("#code_commande").val('')
+    $("#obj_del_inite_1_1").val('J');
+    $("#obj_del_inite_1_2").val(0);
+    
+    $("#obj_del_inite_2_1").val('J');
+    $("#obj_del_inite_2_2").val(1);
 
     $("#mail").prop('disabled', true)
     $("#mail_check").prop('checked', false)
