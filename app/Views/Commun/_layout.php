@@ -118,6 +118,7 @@
 		<?php include_once(__DIR__.'/../reporting/modal_saisie.php');?>
 		<?php include_once(__DIR__.'/../Interface/modal_show_parameter.php');?>
 		<?php include_once(__DIR__.'/../Interface/modal_edit_reporting.php');?>
+		<?php //include_once(__DIR__.'/../reporting/modal_show_reporting.php');?>
 		<?php include_once(__DIR__.'/../Interface/modal_show_history.php');?>
 		<?php include_once(__DIR__.'/../Interface/modal_visu_parametrage.php');?>
 		<?php include_once(__DIR__.'/../Interface/modal_visu_saisie.php');?>

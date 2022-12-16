@@ -8,6 +8,11 @@ $(document).ready(function(){
         crtl_date(text);
     })
 
+    $(document).on('change', '#date_saisi_reporting-reporting', function(){
+        var text = '-reporting';
+        crtl_date(text);
+    })
+
     $(document).on('click', '.btn-search_date', function(){
         var mod = $(this).attr('data-mod');
         var text = '';
@@ -40,6 +45,15 @@ $(document).ready(function(){
             }
         })
     })
+
+    $(document).on('click', '.btn_reporting', function(){
+        var text = '-reporting';
+        crtl_date(text);
+        var value = $(this).attr('data-id');
+        $('#id_parametrage').val(value);
+        // $('.repertoir').val('saisie_rep');
+    })
+
     $(document).on('click', '.btn_interface_saisie', function(){
         crtl_date()
         var value = $(this).attr('data-id');
@@ -103,6 +117,7 @@ $(document).ready(function(){
         $('#table_edit_interface').hide();
         $("#date_saisi_reporting").val('j');
         $("#date_saisi_reporting-edit").val('j');
+        $("#date_saisi_reporting-reporting").val('j');
 
         chargerReporting()
     })

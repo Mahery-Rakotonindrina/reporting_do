@@ -65,13 +65,13 @@ if($del_median != null && $del_moyen != null){
                 <th style="background-color: rgb(217, 217, 217);"><?= $params[0]->rep_reliquat_initial?></th>
                 <th><?= $params[0]->rep_objectif_cadence?></th>
                 <?php if($del_median != null) { ?>
-                    <th>0.5</th>
+                    <th>&#x2264;<?= $del_median ?>h</th>
                 <?php } ?>
                 <?php if($del_moyen != null) { ?>
-                    <th>1</th>
+                    <th>&#x2264;<?= $del_moyen ?>h</th>
                 <?php } ?>
                 <?php if($del_median != null || $del_moyen != null) { ?>
-                    <th>1</th>
+                    <th>&#x2264;1%</th>
                 <?php } ?>
                 <th><?= $params[0]->rep_objectif_delai_1 ?>% à <?= $params[0]->rep_obj_delai_unite_1 ?></th>
                 <th><?= $params[0]->rep_taux_controle?></th>

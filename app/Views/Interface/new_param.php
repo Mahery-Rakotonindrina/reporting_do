@@ -176,7 +176,7 @@
                                             <div class="input-group-addon">
                                                 %
                                             </div>
-                                        </div>&nbsp;&nbsp;&nbsp;&nbsp;
+                                        </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                         <select class="col-sm-3 form-control" id="obj_del_inite_1_1" name="obj_del_inite_1_1">
                                             <option value="J" selected>J</option>
                                             <option value="H">H</option>
@@ -193,7 +193,7 @@
 
                         <div class="col-sm-6">
                             <div class="row form-group" id="form-group-profil-ajout">
-                                <label class="control-label col-sm-4">2ème Objectif de délai 
+                                <label class="control-label col-sm-4"><!--<input type="checkbox" name="obj_del_2" id="obj_del_2">&nbsp;&nbsp;&nbsp;-->2ème Objectif de délai 
                                 <span class="text-danger obligatoire">(*)</span>  :</label>
                                 <div class="col-sm-7">
                                     <div class="form-row row" style="margin-left:0px ;">
@@ -203,7 +203,7 @@
                                                 %
                                             </div>
                                             <!-- <input class="form-control" type="text"  placeholder="City"> -->
-                                        </div>&nbsp;&nbsp;&nbsp;&nbsp;
+                                        </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                         <select class="col-sm-3 form-control" id="obj_del_inite_2_1" name="obj_del_inite_2_1">
                                             <option value="J" selected>J</option>
                                             <option value="H">H</option>

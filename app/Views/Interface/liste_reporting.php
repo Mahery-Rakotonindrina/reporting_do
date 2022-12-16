@@ -31,11 +31,11 @@
                 <td style="text-align: left;">
                 <div class="col-sm-3"></div>
                 <div class="col-sm-8">
-                    <button type="button" id="btn_interface_saisie" class="btn btn-sm btn-info btn_interface_saisie" title="Saisir les données"  
-                            data-toggle="modal" data-target="#modal_saisie" 
+                    <!-- <button type="button" id="btn_interface_saisie" class="btn btn-sm btn-info btn_reporting" title="Voir les reporting"  
+                            data-toggle="modal" data-target="#modal_show_reporting" 
                             data-id="<?= $param->rep_id_parameter?>">
                         <span class="fa fa-layer-group"></span>
-                    </button>&nbsp;
+                    </button>&nbsp; -->
 
                     <button type="button" id="btn_interface_saisie" class="btn btn-sm btn-primary btn_interface_saisie" title="Saisir les données"  
                             data-toggle="modal" data-target="#modal_saisie" 
