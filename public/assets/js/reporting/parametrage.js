@@ -470,7 +470,8 @@ var resetForm = () => {
     $('.form-parameter').each(function() {
         $(this).val('');
     })
-    $('.switch').hide()
+    $('.switch').hide();
+    $("#check_is_active").attr('checked', true);
     $("#projet").prop('disabled', true)
     $("#projet").val('')
     $("#code_commande").prop('disabled', true)
@@ -500,6 +501,12 @@ var editParam = (btn) => {
         data_type: 'json',
         success: function(response) {
             var result = JSON.parse(response);
+            console.log(result.rep_statut);
+            if(result.rep_statut == 1){
+                $("#check_is_active").prop('checked', true);
+            }else{
+                $("#check_is_active").prop('checked', false)
+            }
             $('#id_parameter').val(result.rep_id_parameter)
             $('#client_select').val(result.rep_id_client)
 
