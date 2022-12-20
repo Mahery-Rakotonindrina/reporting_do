@@ -74,7 +74,7 @@ if($del_median != null && $del_moyen != null){
                     <th>&#x2264;1%</th>
                 <?php } ?>
                 <th><?= $params[0]->rep_objectif_delai_1 ?>% à <?= $params[0]->rep_obj_delai_unite_1 ?></th>
-                <th><?= $params[0]->rep_taux_controle?></th>
+                <th><?= $params[0]->rep_taux_controle?>%</th>
                 <th style="background-color:rgb(242, 242, 217);">Volume contrôlés</th>
                 <th style="background-color:rgb(242, 242, 217);">Volume KO</th>
                 <th >% Traitement conforme</th>
